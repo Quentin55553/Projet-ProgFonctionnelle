@@ -2,11 +2,7 @@ package models
 
 import java.time.LocalDate
 
-class Simulation(
-                  prices: Seq[PriceDate],   // Liste des prix à différentes dates
-                  portfolio: Portfolio,     // Portefeuille de l'utilisateur
-                  indicators: IndicatorsMarket  // Indicateurs comme RSI et MACD
-                ) {
+class Simulation(prices: Seq[PriceDate], portfolio: Portfolio, indicators: IndicatorsMarket) {
 
   // Trouver le prix pour une date donnée
   def findPriceByDate(date: LocalDate): Option[Double] = {
@@ -21,7 +17,7 @@ class Simulation(
         // Récupérer les indicateurs RSI, MACD et Signal Line
         val rsi = indicators.RSI()
         val macd = indicators.MACD()
-        val signalLine = indicators.macdIndicator()
+        val signalLine = indicators.SignalLine()
 
         println(s"Évaluation pour la date: $date, prix: $price €")
 
