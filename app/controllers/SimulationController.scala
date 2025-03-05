@@ -1,41 +1,14 @@
-package controllers
-
-import models.{PriceDate,Portfolio,Simulation,IndicatorsMarket}
-
+package models
 
 import java.time.LocalDate
 
 object SimulationController extends App {
 
-  // Exemple de séquence de dates et de prix
-  val prices = Seq(
-    PriceDate(LocalDate.of(2023, 1, 1), 100.0),
-    PriceDate(LocalDate.of(2023, 1, 2), 102.0),
-    PriceDate(LocalDate.of(2023, 1, 3), 101.5),
-    PriceDate(LocalDate.of(2023, 1, 4), 103.0),
-    PriceDate(LocalDate.of(2023, 1, 5), 105.0),
-    PriceDate(LocalDate.of(2023, 1, 6), 104.5),
-    PriceDate(LocalDate.of(2023, 1, 7), 106.0),
-    PriceDate(LocalDate.of(2023, 1, 8), 107.0),
-    PriceDate(LocalDate.of(2023, 1, 9), 108.0),
-    PriceDate(LocalDate.of(2023, 1, 10), 110.0),
-    PriceDate(LocalDate.of(2023, 1, 11), 111.0),
-    PriceDate(LocalDate.of(2023, 1, 12), 112.0),
-    PriceDate(LocalDate.of(2023, 1, 13), 113.0),
-    PriceDate(LocalDate.of(2023, 1, 14), 115.0),
-    PriceDate(LocalDate.of(2023, 1, 15), 116.0),
-    PriceDate(LocalDate.of(2023, 1, 16), 117.0),
-    PriceDate(LocalDate.of(2023, 1, 17), 118.0),
-    PriceDate(LocalDate.of(2023, 1, 18), 119.0),
-    PriceDate(LocalDate.of(2023, 1, 19), 120.0),
-    PriceDate(LocalDate.of(2023, 1, 20), 121.0),
-    PriceDate(LocalDate.of(2023, 1, 21), 122.0),
-    PriceDate(LocalDate.of(2023, 1, 22), 123.0),
-    PriceDate(LocalDate.of(2023, 1, 23), 124.0),
-    PriceDate(LocalDate.of(2023, 1, 24), 125.0),
-    PriceDate(LocalDate.of(2023, 1, 25), 126.0),
-    PriceDate(LocalDate.of(2023, 1, 26), 127.0)
-  )
+  // Création de l'instance de la classe generatePrices
+  val priceGenerator = new generatePrices()
+
+  // Générer des prix fluctuants pour 26 jours à partir du 1er janvier 2023 avec un prix initial de 100
+  val prices = priceGenerator.generate(LocalDate.of(2023, 1, 1), 26, 100.0)
 
   // Création du portefeuille
   val portfolio = Portfolio(value = 10000.0)
@@ -46,9 +19,24 @@ object SimulationController extends App {
   // Création de la simulation
   val simulation = new Simulation(prices, portfolio, indicators)
 
-  // Liste des dates pour lesquelles nous allons simuler
-  val datesToEvaluate = prices.map(_.date)
+  // Afficher les prix générés (facultatif)
+  println("Prix générés :")
+  prices.foreach(p => println(s"Date: ${p.date}, Prix: ${p.price}"))
 
-  // Simulation des décisions d'achat et de vente pour ces dates
-  simulation.simulateTradingForDates(datesToEvaluate)
+  // Demander à l'utilisateur de choisir une date
+  println("\nEntrez une date pour l'évaluation (au format YYYY-MM-DD) :")
+  val inputDate = scala.io.StdIn.readLine()
+
+  try {
+    val dateToEvaluate = LocalDate.parse(inputDate)
+    // Vérifier que la date choisie existe dans les prix
+    if (prices.exists(_.date == dateToEvaluate)) {
+      // Si la date est valide, on évalue les indicateurs pour cette date
+      simulation.evaluateIndicatorsForDate(dateToEvaluate)
+    } else {
+      println("Date invalide. Aucun prix trouvé pour cette date.")
+    }
+  } catch {
+    case e: Exception => println("Date invalide. Veuillez entrer une date correcte au format YYYY-MM-DD.")
+  }
 }
