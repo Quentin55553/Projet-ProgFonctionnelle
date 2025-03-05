@@ -1,12 +1,13 @@
 package models
+
 import math.sqrt
 
 case class FinancialAlgorithm (
-  assets: Double,
-  liabilities: Double,
-  portfolioReturns: Seq[Double],
-  riskFreeRate: Double
-)
+                                assets: Double,
+                                liabilities: Double,
+                                portfolioReturns: Seq[Double],
+                                riskFreeRate: Double
+                              )
 {
 
   def NAV() : Double = {
@@ -25,6 +26,5 @@ case class FinancialAlgorithm (
     val averageReturn = portfolioReturns.sum / portfolioReturns.length
     if (vol != 0) (averageReturn - riskFreeRate) / vol else 0.0
   }
-
 
 }
