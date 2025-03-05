@@ -1,8 +1,11 @@
-package models
+package controllers
+
+import models.{PriceDate,Portfolio,Simulation,IndicatorsMarket}
+
 
 import java.time.LocalDate
 
-object Main extends App {
+object SimulationController extends App {
 
   // Exemple de séquence de dates et de prix
   val prices = Seq(

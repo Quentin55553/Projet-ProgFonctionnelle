@@ -9,12 +9,15 @@ class Simulation(prices: Seq[PriceDate], portfolio: Portfolio, indicators: Indic
     prices.find(_.date == date).map(_.price)
   }
 
-  // Évaluer les indicateurs pour une date donnée
+  // Mettre à jour le portefeuille et évaluer les indicateurs financiers
   def evaluateIndicatorsForDate(date: LocalDate): Unit = {
     val maybePrice = findPriceByDate(date)
     maybePrice match {
       case Some(price) =>
-        // Récupérer les indicateurs RSI, MACD et Signal Line
+        // Mettre à jour le portefeuille (ajusté selon la logique d'achat/vente)
+        portfolio.updateValue(price)
+
+        // Récupérer les indicateurs RSI, MACD, Signal Line
         val rsi = indicators.RSI()
         val macd = indicators.MACD()
         val signalLine = indicators.SignalLine()
@@ -38,6 +41,18 @@ class Simulation(prices: Seq[PriceDate], portfolio: Portfolio, indicators: Indic
         } else {
           println(s"MACD = ${macd.last} : Pas de signal d'achat ou de vente.")
         }
+
+        // Calcul de la NAV, volatilité, Sharpe ratio après chaque mise à jour du portefeuille
+        val financialAlgorithm = new FinancialAlgorithm(
+          assets = portfolio.value,    // La valeur actuelle du portefeuille est l'actif
+          liabilities = 0.0,           // Pas de passif défini pour le moment
+          portfolioReturns = portfolio.getReturns,  // Rendements calculés du portefeuille
+          riskFreeRate = 0.01          // Taux sans risque, par exemple 1%
+        )
+
+        // Affichage des résultats financiers
+        println(s"Volatilité: ${financialAlgorithm.volatility()}")
+        println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio()}")
 
       case None =>
         println(s"Aucun prix trouvé pour la date: $date")
