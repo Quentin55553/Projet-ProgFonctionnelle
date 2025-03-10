@@ -35,7 +35,6 @@ object SimulationController extends App {
     PriceDate(LocalDate.of(2023, 1, 26), 95.0)
   )
 
-  // Dernière date disponible dans la liste des prix
   val lastDate = prices.last.date
 
   println("Entrez une date pour l'évaluation (au format YYYY-MM-DD) ou tapez 'exit' pour quitter :")
