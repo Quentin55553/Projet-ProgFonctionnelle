@@ -1,6 +1,5 @@
 package controllers
 
-import models.FinancialAlgorithm
 object FinancialAlgorithmController extends App {
 
 
@@ -10,9 +9,5 @@ object FinancialAlgorithmController extends App {
   val riskFreeRate = 0.01
 
 
-  val calculator = FinancialAlgorithm(assets,liabilities,returns, riskFreeRate)
-
-  println(s"Volatilité: ${calculator.volatility()}")
-  println(s"Sharpe Ratio: ${calculator.sharpeRatio()}")
 
 }

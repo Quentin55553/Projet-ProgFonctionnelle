@@ -2,42 +2,65 @@ package models
 
 case class IndicatorsMarket(prices: Seq[Double]) {
 
-  // Fonction pour calculer le RSI sur 14 jours
-  def RSI(): Double = {
-    val period = 14
-    val gains = (1 until period).map(i => Math.max(prices(i) - prices(i - 1), 0.0))
-    val losses = (1 until period).map(i => Math.max(prices(i - 1) - prices(i), 0.0))
+  def RSI(period: Int = 14): Double = {
+    val changes = prices.sliding(2).map { case Seq(prev, current) => current - prev }.toList
+    val (gains, losses) = changes.map { change =>
+      if (change > 0) (change, 0.0) else (0.0, -change)
+    }.unzip
 
-    val avgGain = gains.sum / period
-    val avgLoss = losses.sum / period
+    val avgGain = gains.take(period).sum / period
+    val avgLoss = losses.take(period).sum / period
 
-    val rs = if (avgLoss == 0) Double.MaxValue else avgGain / avgLoss
+    val rs = if (avgLoss == 0) Double.PositiveInfinity else avgGain / avgLoss
+
     100 - (100 / (1 + rs))
   }
 
-  // Fonction pour calculer la moyenne mobile exponentielle (EMA)
   def EMA(period: Int): Seq[Double] = {
-    val cste = 2 / (period + 1).toDouble
-    var ema = Seq(prices.head)
-    for (i <- 1 until prices.length) {
-      val newEma = (prices(i) - ema.last) * cste + ema.last
-      ema = ema :+ newEma
-    }
-    ema
+    val smoothingFactor = 2.0 / (period + 1)
+    prices.foldLeft(Seq(prices.head)) { (ema, price) =>
+      val newEma = (price - ema.last) * smoothingFactor + ema.last
+      ema :+ newEma
+    }.tail
   }
 
-  // Calcul du MACD avec les EMA sur 9 jours et 26 jours
   def MACD(): Seq[Double] = {
-    val emaShort = EMA(9) // EMA courte sur 9 jours
-    val emaLong = EMA(26) // EMA longue sur 26 jours
-
-    // Calcul du MACD comme différence entre les deux EMA
-    emaShort.zip(emaLong).map { case (short, long) => short - long }
+    val ema12 = EMA(12)
+    val ema26 = EMA(26)
+    ema12.zip(ema26).map { case (short, long) => short - long }
   }
 
-  // Calcul de la signal line qui est une EMA du MACD sur 9 jours
   def SignalLine(): Seq[Double] = {
     val macd = MACD()
-    EMA(9) // On calcule une EMA du MACD sur 9 jours
+    val smoothingFactor = 2.0 / (9 + 1)
+    macd.foldLeft(Seq(macd.head)) { (signal, value) =>
+      val newSignal = (value - signal.last) * smoothingFactor + signal.last
+      signal :+ newSignal
+    }.tail
+  }
+
+  def evaluateRSI(): String = {
+    val rsi = RSI()
+    if (rsi > 70) {
+      s"RSI = $rsi : Signal de VENTE (RSI supérieur à 70)."
+    } else if (rsi < 30) {
+      s"RSI = $rsi : Signal d'ACHAT (RSI inférieur à 30)."
+    } else {
+      s"RSI = $rsi : Signal incertain (RSI entre 30 et 70)."
+    }
+  }
+
+  def evaluateMACD(): String = {
+    val macd = MACD().last
+    val signalLine = SignalLine().last
+    val difference = macd - signalLine
+
+    if (difference > 0) {
+      s"MACD = $macd, Signal Line = $signalLine : Signal d'ACHAT (MACD croise au-dessus de la Signal Line)."
+    } else if (difference < 0) {
+      s"MACD = $macd, Signal Line = $signalLine : Signal de VENTE (MACD croise en-dessous de la Signal Line)."
+    } else {
+      s"MACD = $macd, Signal Line = $signalLine : Signal incertain (les lignes MACD et Signal Line sont proches)."
+    }
   }
 }
