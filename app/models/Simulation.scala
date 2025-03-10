@@ -2,10 +2,15 @@ package models
 
 import java.time.LocalDate
 
-class Simulation(prices: Seq[PriceDate], portfolio: Portfolio, indicators: IndicatorsMarket) {
+class Simulation(prices: List[PriceDate], portfolio: Portfolio, indicators: IndicatorsMarket) {
 
   def findPriceByDate(date: LocalDate): Option[Double] = {
-    prices.find(_.date == date).map(_.price)
+    for (priceDate <- prices) {
+      if (priceDate.date.isEqual(date)) {
+        return Some(priceDate.price)
+      }
+    }
+    None
   }
 
   def evaluateIndicatorsForDate(date: LocalDate): Unit = {
@@ -51,7 +56,7 @@ class Simulation(prices: Seq[PriceDate], portfolio: Portfolio, indicators: Indic
     }
   }
 
-  def simulateTradingForDates(dates: Seq[LocalDate]): Unit = {
+  def simulateTradingForDates(dates: List[LocalDate]): Unit = {
     for (date <- dates) {
       evaluateIndicatorsForDate(date)
     }

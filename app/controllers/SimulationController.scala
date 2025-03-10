@@ -2,11 +2,10 @@ package controllers
 
 import models._
 import java.time.LocalDate
-import scala.math.Ordered.orderingToOrdered
 
 object SimulationController extends App {
 
-  val prices = Seq(
+  val prices = List(
     PriceDate(LocalDate.of(2023, 1, 1), 100.0),
     PriceDate(LocalDate.of(2023, 1, 2), 95.0),
     PriceDate(LocalDate.of(2023, 1, 3), 90.0),
@@ -36,19 +35,32 @@ object SimulationController extends App {
   )
 
   println("Entrez une date pour l'évaluation (au format YYYY-MM-DD) ou tapez 'exit' pour quitter :")
-
   var inputDate = scala.io.StdIn.readLine()
 
   while (inputDate.toLowerCase != "exit") {
     try {
       val dateToEvaluate = LocalDate.parse(inputDate)
 
-      if (prices.exists(_.date == dateToEvaluate)) {
-        val selectedPrices = prices.takeWhile(_.date <= dateToEvaluate).map(_.price)
+      var found = false
+      var selectedPrices = List[Double]()
+      for (priceDate <- prices) {
+        if (priceDate.date.isBefore(dateToEvaluate) || priceDate.date.isEqual(dateToEvaluate)) {
+          selectedPrices = selectedPrices :+ priceDate.price
+        }
+        if (priceDate.date.isEqual(dateToEvaluate)) {
+          found = true
+        }
+      }
 
+      if (found) {
         val indicators = IndicatorsMarket(selectedPrices)
 
-        val returns = selectedPrices.sliding(2).map { case Seq(prev, current) => (current - prev) / prev }.toSeq
+        var returns = List[Double]()
+        for (i <- 1 until selectedPrices.length) {
+          val prev = selectedPrices(i - 1)
+          val current = selectedPrices(i)
+          returns = returns :+ ((current - prev) / prev)
+        }
 
         val financialAlgorithm = FinancialAlgorithm(
           assets = FinancialAlgorithmController.assets,
@@ -62,7 +74,6 @@ object SimulationController extends App {
         println(indicators.evaluateMACD())
         println(s"Volatilité: ${financialAlgorithm.volatility().formatted("%.4f")}")
         println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio().formatted("%.4f")}")
-
       } else {
         println("Date invalide. Aucun prix trouvé pour cette date.")
       }
