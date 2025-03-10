@@ -1,9 +1,9 @@
 package api
 
 import data.FinancialAsset
-
 import java.net.{HttpURLConnection, URI}
 import scala.io.Source
+import play.api.libs.json._
 
 // Signification des valeurs retournées par l'API :
 // c : Prix actuel (Current price)
@@ -48,9 +48,7 @@ class APIHandler() {
                     case 200 =>
                         val response = Source.fromInputStream(connection.getInputStream).mkString
                         connection.getInputStream.close()
-
-                        // Retour incorrects, faire en sorte de sauvegarder les données JSON dans la classe de données FinancialAsset, qu'on retournera
-                        return Some(response)
+                        return Json.parse(response).asOpt[FinancialAsset]
 
                     case 429 =>
                         println("Limite de requêtes atteinte. Nouvelle tentative dans 1.5 seconde...")
@@ -75,7 +73,7 @@ class APIHandler() {
     }
 
 
-    def fetchStockInfos(stockSymbol: String) = {
+    def fetchStockInfos(stockSymbol: String): Option[FinancialAsset] = {
         val queryUrl = s"$baseUrl/quote?symbol=$stockSymbol&token=$apiKey"
         execQuery(queryUrl)
     }
