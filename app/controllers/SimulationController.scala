@@ -5,7 +5,6 @@ import java.time.LocalDate
 
 object SimulationController extends App {
 
-  // Liste des prix
   val prices = List(
     PriceDate(LocalDate.of(2023, 1, 1), 100.0),
     PriceDate(LocalDate.of(2023, 1, 2), 95.0),
