@@ -75,6 +75,17 @@ class APIHandler() {
 
     def fetchStockInfos(stockSymbol: String): Option[FinancialAsset] = {
         val queryUrl = s"$baseUrl/quote?symbol=$stockSymbol&token=$apiKey"
-        execQuery(queryUrl)
+        execQuery(queryUrl).map(_.copy(symbol = stockSymbol))
     }
+
+    /*
+    def fetchCryptoInfos(cryptoSymbol: String): Option[FinancialAsset] = {
+
+    }
+
+
+    def fetchForexInfos(forexSymbol: String): Option[FinancialAsset] = {
+        
+    }
+     */
 }
