@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="root [file:/C:/Users/CYTech%20Student/IdeaProjects/Projet-ProgFonctionnelle/]" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_X">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
     <output url="file://$MODULE_DIR$/../../target/scala-2.13/classes" />
     <output-test url="file://$MODULE_DIR$/../../target/scala-2.13/test-classes" />
     <exclude-output />
@@ -38,12 +38,19 @@
     <orderEntry type="library" name="sbt: com.google.inject:guice:6.0.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.google.j2objc:j2objc-annotations:2.8:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: com.shapesecurity:salvation2:3.0.1:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.client3:akka-http-backend_2.13:3.8.15:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.client3:core_2.13:3.8.15:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.model:core_2.13:1.5.5:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.shared:akka_2.13:1.3.13:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.shared:core_2.13:1.3.13:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.softwaremill.sttp.shared:ws_2.13:1.3.13:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: com.squareup.okhttp3:okhttp:3.11.0:jar" level="project" />
     <orderEntry type="library" scope="TEST" name="sbt: com.squareup.okio:okio:1.14.0:jar" level="project" />
     <orderEntry type="library" name="sbt: com.thoughtworks.paranamer:paranamer:2.8:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor-typed_2.13:2.6.21:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-actor_2.13:2.6.21:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-http-core_2.13:10.2.10:jar" level="project" />
+    <orderEntry type="library" name="sbt: com.typesafe.akka:akka-http_2.13:10.2.10:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-parsing_2.13:10.2.10:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-protobuf-v3_2.13:2.6.21:jar" level="project" />
     <orderEntry type="library" name="sbt: com.typesafe.akka:akka-serialization-jackson_2.13:2.6.21:jar" level="project" />

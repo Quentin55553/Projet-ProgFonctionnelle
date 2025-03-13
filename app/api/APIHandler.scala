@@ -1,9 +1,13 @@
 package api
 
 import data.FinancialAsset
+import models.PriceDate
+
 import java.net.{HttpURLConnection, URI}
 import scala.io.Source
 import play.api.libs.json._
+
+import java.time.{LocalDate, LocalDateTime, ZoneOffset}
 
 // Signification des valeurs retournées par l'API :
 // c : Prix actuel (Current price)
@@ -23,8 +27,7 @@ import play.api.libs.json._
 
 class APIHandler() {
     private val baseUrl = "https://finnhub.io/api/v1"
-    private val apiKey = "cv2vkohr01qk43tvjktgcv2vkohr01qk43tvjku0"
-
+    private val apiKey = "cv2vkohr01qk43tvjktgcv2vkohr01qk43tvjku0" // Remplace par ta clé API
 
     private def openConnection(requestUrl: String): HttpURLConnection = {
         val uri = new URI(requestUrl)
@@ -33,7 +36,6 @@ class APIHandler() {
         connection.setRequestMethod("GET")
         connection
     }
-
 
     private def execQuery(queryUrl: String): Option[FinancialAsset] = {
         var attempts = 0
@@ -58,7 +60,6 @@ class APIHandler() {
                         println(s"Erreur inattendue après avoir effectué la requête. Code : $statusCode")
                         return None
                 }
-
             } catch {
                 case e: Exception =>
                     println(s"Erreur lors de la requête : ${e.getMessage}")
@@ -72,11 +73,72 @@ class APIHandler() {
         None
     }
 
-
     def fetchStockInfos(stockSymbol: String): Option[FinancialAsset] = {
         val queryUrl = s"$baseUrl/quote?symbol=$stockSymbol&token=$apiKey"
         execQuery(queryUrl).map(_.copy(symbol = stockSymbol))
     }
+
+    def fetchHistoricalData(stockSymbol: String, from: LocalDate, to: LocalDate): Option[List[PriceDate]] = {
+        val fromTimestamp = from.atStartOfDay.toEpochSecond(ZoneOffset.UTC)
+        val toTimestamp = to.atStartOfDay.toEpochSecond(ZoneOffset.UTC)
+        val queryUrl = s"$baseUrl/stock/candle?symbol=$stockSymbol&resolution=D&from=$fromTimestamp&to=$toTimestamp&token=$apiKey"
+
+        execHistoricalQuery(queryUrl)
+    }
+
+    private def execHistoricalQuery(queryUrl: String): Option[List[PriceDate]] = {
+        var attempts = 0
+        val maxAttempts = 5
+
+        while (attempts < maxAttempts) {
+            try {
+                val connection = openConnection(queryUrl)
+                val statusCode = connection.getResponseCode
+
+                statusCode match {
+                    case 200 =>
+                        val response = Source.fromInputStream(connection.getInputStream).mkString
+                        connection.getInputStream.close()
+                        return parseHistoricalData(response)
+
+                    case 429 =>
+                        println("Limite de requêtes atteinte. Nouvelle tentative dans 1.5 seconde...")
+                        Thread.sleep(1500)
+
+                    case _ =>
+                        println(s"Erreur inattendue après avoir effectué la requête. Code : $statusCode")
+                        return None
+                }
+            } catch {
+                case e: Exception =>
+                    println(s"Erreur lors de la requête : ${e.getMessage}")
+                    return None
+            }
+
+            attempts += 1
+        }
+
+        println(s"L'API semble bloquée, impossible d'effectuer la requête suivante : $queryUrl")
+        None
+    }
+
+    // Parse les données historiques renvoyées par l'API
+    private def parseHistoricalData(jsonResponse: String): Option[List[PriceDate]] = {
+        val json = Json.parse(jsonResponse)
+        val timestamps = (json \ "t").as[List[Long]]
+        val closes = (json \ "c").as[List[Double]]
+
+        if (timestamps.nonEmpty && closes.nonEmpty) {
+            val prices = timestamps.zip(closes).map { case (timestamp, close) =>
+                val date = LocalDateTime.ofEpochSecond(timestamp, 0, ZoneOffset.UTC).toLocalDate
+                PriceDate(date, close)
+            }
+            Some(prices)
+        } else {
+            None
+        }
+    }
+
 
     /*
     def fetchCryptoInfos(cryptoSymbol: String): Option[FinancialAsset] = {
