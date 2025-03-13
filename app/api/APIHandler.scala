@@ -122,7 +122,6 @@ class APIHandler() {
         None
     }
 
-    // Parse les données historiques renvoyées par l'API
     private def parseHistoricalData(jsonResponse: String): Option[List[PriceDate]] = {
         val json = Json.parse(jsonResponse)
         val timestamps = (json \ "t").as[List[Long]]

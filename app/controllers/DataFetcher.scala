@@ -4,7 +4,7 @@ import api.APIHandler
 import models.PriceDate
 import java.time.LocalDate
 
-object DataFetcher {
+object DataFetcher  {
   def main(args: Array[String]): Unit = {
     val apiHandler = new APIHandler()
 
