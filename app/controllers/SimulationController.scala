@@ -1,25 +1,38 @@
 package controllers
 
 import models._
-import java.time.{LocalDate, ZoneOffset}
-import scala.concurrent.duration._
-import api.APIHandler
+import java.time.LocalDate
 
 object SimulationController extends App {
 
-  val apiHandler = new APIHandler()
-
-  val toDate = LocalDate.now()
-  val fromDate = toDate.minusDays(30)
-
-  val stockSymbol = "AAPL"
-  val prices = apiHandler.fetchHistoricalData(stockSymbol, fromDate, toDate).getOrElse {
-    println("Impossible de récupérer les données historiques. Utilisation des données par défaut.")
-    List(
-      PriceDate(LocalDate.of(2023, 1, 1), 100.0),
-      PriceDate(LocalDate.of(2023, 1, 2), 95.0),
-    )
-  }
+  val prices = List(
+    PriceDate(LocalDate.of(2023, 1, 1), 100.0),
+    PriceDate(LocalDate.of(2023, 1, 2), 95.0),
+    PriceDate(LocalDate.of(2023, 1, 3), 90.0),
+    PriceDate(LocalDate.of(2023, 1, 4), 85.0),
+    PriceDate(LocalDate.of(2023, 1, 5), 80.0),
+    PriceDate(LocalDate.of(2023, 1, 6), 85.0),
+    PriceDate(LocalDate.of(2023, 1, 7), 90.0),
+    PriceDate(LocalDate.of(2023, 1, 8), 95.0),
+    PriceDate(LocalDate.of(2023, 1, 9), 100.0),
+    PriceDate(LocalDate.of(2023, 1, 10), 105.0),
+    PriceDate(LocalDate.of(2023, 1, 11), 110.0),
+    PriceDate(LocalDate.of(2023, 1, 12), 115.0),
+    PriceDate(LocalDate.of(2023, 1, 13), 120.0),
+    PriceDate(LocalDate.of(2023, 1, 14), 125.0),
+    PriceDate(LocalDate.of(2023, 1, 15), 120.0),
+    PriceDate(LocalDate.of(2023, 1, 16), 115.0),
+    PriceDate(LocalDate.of(2023, 1, 17), 110.0),
+    PriceDate(LocalDate.of(2023, 1, 18), 105.0),
+    PriceDate(LocalDate.of(2023, 1, 19), 100.0),
+    PriceDate(LocalDate.of(2023, 1, 20), 95.0),
+    PriceDate(LocalDate.of(2023, 1, 21), 90.0),
+    PriceDate(LocalDate.of(2023, 1, 22), 85.0),
+    PriceDate(LocalDate.of(2023, 1, 23), 80.0),
+    PriceDate(LocalDate.of(2023, 1, 24), 85.0),
+    PriceDate(LocalDate.of(2023, 1, 25), 90.0),
+    PriceDate(LocalDate.of(2023, 1, 26), 95.0)
+  )
 
   val lastDate = prices.last.date
 
@@ -43,10 +56,8 @@ object SimulationController extends App {
         val predictedPriceMA = predictedPricesMA.last
 
         println(s"\nPrédictions pour la date: $dateToEvaluate")
-        println("--------------------------------------------------")
         println(s"1. Prix prédit (Régression Linéaire): $predictedPriceRegression €")
         println(s"2. Prix prédit (Moyenne Mobile - 7 jours): $predictedPriceMA €")
-        println("--------------------------------------------------")
       } else {
         var found = false
         var selectedPrices = List[Double]()

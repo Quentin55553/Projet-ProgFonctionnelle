@@ -17,7 +17,9 @@ lazy val root = (project in file("."))
       "com.typesafe.akka" %% "akka-serialization-jackson" % "2.6.20",
       "com.softwaremill.sttp.client3" %% "core" % "3.8.15",
       "com.softwaremill.sttp.client3" %% "akka-http-backend" % "3.8.15",
-      "com.typesafe.play" %% "play-json" % "2.9.4"
+      "com.typesafe.play" %% "play-json" % "2.9.4",
+      "com.softwaremill.sttp.client3" %% "core" % "3.8.3",
+      "com.lihaoyi" %% "upickle" % "3.1.0"
     )
 
   )
