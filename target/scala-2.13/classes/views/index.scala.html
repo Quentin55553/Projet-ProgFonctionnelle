@@ -1,0 +1,53 @@
+@import data.FinancialAsset
+@import java.time.format.DateTimeFormatter
+
+@(financialAsset: FinancialAsset)
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Index de la plateforme</title>
+        <link rel="icon" type="image/x-icon" href="@routes.Assets.versioned("images/favicon.ico")">
+    </head>
+
+    <body>
+        <h1>Ceci n'est qu'un test de l'API sur la page d'index, cela pourra être retiré à l'avenir</h1>
+        <h3>Informations boursières pour l'action @financialAsset.symbol (Apple)</h3>
+
+        <table>
+            <tr>
+                <td>Prix actuel :</td>
+                <td>$ @financialAsset.currentPrice</td>
+            </tr>
+            <tr>
+                <td>Variation :</td>
+                <td>$ @financialAsset.priceChange</td>
+            </tr>
+            <tr>
+                <td>Variation (%) :</td>
+                <td>@financialAsset.percentChange</td>
+            </tr>
+            <tr>
+                <td>Prix le plus haut :</td>
+                <td>$ @financialAsset.highPrice</td>
+            </tr>
+            <tr>
+                <td>Prix le plus bas :</td>
+                <td>$ @financialAsset.lowPrice</td>
+            </tr>
+            <tr>
+                <td>Prix d'ouverture :</td>
+                <td>$ @financialAsset.openPrice</td>
+            </tr>
+            <tr>
+                <td>Prix de clôture précédent :</td>
+                <td>$ @financialAsset.closePrice</td>
+            </tr>
+            <tr>
+                <td>Date et heure :</td>
+                <td>@financialAsset.dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy 'à' HH'h'mm"))</td>
+            </tr>
+        </table>
+    </body>
+</html>
