@@ -7,7 +7,7 @@ import java.time.{LocalDateTime, ZoneOffset}
 import scala.math.BigDecimal.RoundingMode
 
 
-case class FinancialAsset(
+case class FinancialAsset (
     symbol: String,
     currentPrice: Double,
     priceChange: Double,
