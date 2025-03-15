@@ -2,37 +2,14 @@ package controllers
 
 import models._
 import java.time.LocalDate
+import models.PriceDate
+import scala.annotation.tailrec
 
 object SimulationController extends App {
 
-  val prices = List(
-    PriceDate(LocalDate.of(2023, 1, 1), 100.0),
-    PriceDate(LocalDate.of(2023, 1, 2), 95.0),
-    PriceDate(LocalDate.of(2023, 1, 3), 90.0),
-    PriceDate(LocalDate.of(2023, 1, 4), 85.0),
-    PriceDate(LocalDate.of(2023, 1, 5), 80.0),
-    PriceDate(LocalDate.of(2023, 1, 6), 85.0),
-    PriceDate(LocalDate.of(2023, 1, 7), 90.0),
-    PriceDate(LocalDate.of(2023, 1, 8), 95.0),
-    PriceDate(LocalDate.of(2023, 1, 9), 100.0),
-    PriceDate(LocalDate.of(2023, 1, 10), 105.0),
-    PriceDate(LocalDate.of(2023, 1, 11), 110.0),
-    PriceDate(LocalDate.of(2023, 1, 12), 115.0),
-    PriceDate(LocalDate.of(2023, 1, 13), 120.0),
-    PriceDate(LocalDate.of(2023, 1, 14), 125.0),
-    PriceDate(LocalDate.of(2023, 1, 15), 120.0),
-    PriceDate(LocalDate.of(2023, 1, 16), 115.0),
-    PriceDate(LocalDate.of(2023, 1, 17), 110.0),
-    PriceDate(LocalDate.of(2023, 1, 18), 105.0),
-    PriceDate(LocalDate.of(2023, 1, 19), 100.0),
-    PriceDate(LocalDate.of(2023, 1, 20), 95.0),
-    PriceDate(LocalDate.of(2023, 1, 21), 90.0),
-    PriceDate(LocalDate.of(2023, 1, 22), 85.0),
-    PriceDate(LocalDate.of(2023, 1, 23), 80.0),
-    PriceDate(LocalDate.of(2023, 1, 24), 85.0),
-    PriceDate(LocalDate.of(2023, 1, 25), 90.0),
-    PriceDate(LocalDate.of(2023, 1, 26), 95.0)
-  )
+  val fromDate = LocalDate.of(2025, 2, 14)
+  val toDate = LocalDate.of(2025, 3, 14)
+  val prices = DataFetcher.fetchHistoricalPrices("AAPL", fromDate, toDate)
 
   val lastDate = prices.last.date
 
@@ -59,41 +36,30 @@ object SimulationController extends App {
         println(s"1. Prix prédit (Régression Linéaire): $predictedPriceRegression €")
         println(s"2. Prix prédit (Moyenne Mobile - 7 jours): $predictedPriceMA €")
       } else {
-        var found = false
-        var selectedPrices = List[Double]()
-        for (priceDate <- prices) {
-          if (priceDate.date.isBefore(dateToEvaluate) || priceDate.date.isEqual(dateToEvaluate)) {
-            selectedPrices = selectedPrices :+ priceDate.price
-          }
-          if (priceDate.date.isEqual(dateToEvaluate)) {
-            found = true
-          }
-        }
+        prices.find(_.date == dateToEvaluate) match {
+          case Some(priceDate) =>
+            val selectedPrices = prices.takeWhile(_.date.isBefore(dateToEvaluate.plusDays(1))).map(_.price)
+            val indicators = IndicatorsMarket(selectedPrices)
 
-        if (found) {
-          val indicators = IndicatorsMarket(selectedPrices)
+            val returns = selectedPrices.sliding(2).map { case List(prev, current) =>
+              (current - prev) / prev
+            }.toList
 
-          var returns = List[Double]()
-          for (i <- 1 until selectedPrices.length) {
-            val prev = selectedPrices(i - 1)
-            val current = selectedPrices(i)
-            returns = returns :+ ((current - prev) / prev)
-          }
+            val financialAlgorithm = FinancialAlgorithm(
+              assets = FinancialAlgorithmController.assets,
+              liabilities = FinancialAlgorithmController.liabilities,
+              portfolioReturns = returns,
+              riskFreeRate = FinancialAlgorithmController.riskFreeRate
+            )
 
-          val financialAlgorithm = FinancialAlgorithm(
-            assets = FinancialAlgorithmController.assets,
-            liabilities = FinancialAlgorithmController.liabilities,
-            portfolioReturns = returns,
-            riskFreeRate = FinancialAlgorithmController.riskFreeRate
-          )
+            println(s"\nÉvaluation pour la date: $dateToEvaluate, prix: ${priceDate.price} €")
+            println(indicators.evaluateRSI())
+            println(indicators.evaluateMACD())
+            println(s"Volatilité: ${financialAlgorithm.volatility().formatted("%.4f")}")
+            println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio().formatted("%.4f")}")
 
-          println(s"\nÉvaluation pour la date: $dateToEvaluate, prix: ${selectedPrices.last} €")
-          println(indicators.evaluateRSI())
-          println(indicators.evaluateMACD())
-          println(s"Volatilité: ${financialAlgorithm.volatility().formatted("%.4f")}")
-          println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio().formatted("%.4f")}")
-        } else {
-          println("Date invalide. Aucun prix trouvé pour cette date.")
+          case None =>
+            println("Date invalide. Aucun prix trouvé pour cette date.")
         }
       }
     } catch {
