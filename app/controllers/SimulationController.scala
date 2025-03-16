@@ -7,18 +7,18 @@ object SimulationController extends App {
 
   val fromDate = LocalDate.of(2025, 2, 14)
   val toDate = LocalDate.of(2025, 3, 14)
-  val prices = DataFetcher.fetchHistoricalPrices("AAPL", fromDate, toDate)
+  val pricesDates = DataFetcher.fetchHistoricalPrices("AAPL", fromDate, toDate)
 
   val riskFreeRate = 0.01
-  val simulation = new Simulation(prices, riskFreeRate)
+  val simulation = new Simulation(pricesDates, riskFreeRate)
 
   println("Prix historiques récupérés :")
-  prices.foreach { priceDate =>
+  pricesDates.foreach { priceDate =>
     println(s"${priceDate.date} : prix = ${priceDate.price} €")
   }
   println()
 
-  val lastDate = prices.last.date
+  val lastDate = pricesDates.last.date
 
   println("Entrez une date pour l'évaluation (au format YYYY-MM-DD) ou tapez 'exit' pour quitter :")
   var inputDate = scala.io.StdIn.readLine()
@@ -28,8 +28,8 @@ object SimulationController extends App {
       val dateToEvaluate = LocalDate.parse(inputDate)
 
       if (dateToEvaluate.isAfter(lastDate)) {
-        val selectedPrices = prices.map(_.price)
-        val prevision = new Prevision(selectedPrices)
+        val prices = pricesDates.map(_.price)
+        val prevision = new Prevision(prices)
 
         val futureDays = (dateToEvaluate.toEpochDay - lastDate.toEpochDay).toInt
 
