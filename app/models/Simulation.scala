@@ -2,60 +2,68 @@ package models
 
 import java.time.LocalDate
 
-class Simulation(prices: List[PriceDate], portfolio: Portfolio, indicators: IndicatorsMarket) {
+class Simulation(prices: List[PriceDate], riskFreeRate: Double) {
 
   def findPriceByDate(date: LocalDate): Option[Double] = {
-    for (priceDate <- prices) {
-      if (priceDate.date.isEqual(date)) {
-        return Some(priceDate.price)
-      }
+    prices.find(_.date.isEqual(date)).map(_.price)
+  }
+
+  def evaluateRSI(prices: List[Double]): String = {
+    val indicators = IndicatorsMarket(prices)
+    indicators.RSI() match {
+      case Some(rsi) =>
+        if (rsi < 30) {
+          s"RSI = $rsi : C'est le moment d'ACHETER."
+        } else if (rsi > 70) {
+          s"RSI = $rsi : C'est le moment de VENDRE."
+        } else {
+          s"RSI = $rsi : Pas de signal d'achat ou de vente."
+        }
+      case None =>
+        "Pas assez de données pour calculer le RSI."
     }
-    None
+  }
+
+  def evaluateMACD(prices: List[Double]): String = {
+    val indicators = IndicatorsMarket(prices)
+    (indicators.MACD(), indicators.SignalLine()) match {
+      case (Some(macd), Some(signalLine)) if macd.nonEmpty && signalLine.nonEmpty =>
+        val lastMacd = macd.last
+        val lastSignalLine = signalLine.last
+        if (lastMacd > lastSignalLine) {
+          s"MACD = $lastMacd : Signal d'ACHAT."
+        } else if (lastMacd < lastSignalLine) {
+          s"MACD = $lastMacd : Signal de VENTE."
+        } else {
+          s"MACD = $lastMacd : Pas de signal d'achat ou de vente."
+        }
+      case _ =>
+        "Pas assez de données pour calculer le MACD ou la Signal Line."
+    }
   }
 
   def evaluateIndicatorsForDate(date: LocalDate): Unit = {
-    val maybePrice = findPriceByDate(date)
-    maybePrice match {
+    findPriceByDate(date) match {
       case Some(price) =>
-        portfolio.updateValue(price)
+        val selectedPrices = prices.takeWhile(_.date.isBefore(date.plusDays(1))).map(_.price)
 
-        val rsi = indicators.RSI()
-        val macd = indicators.MACD()
-        val signalLine = indicators.SignalLine()
+        val returns = selectedPrices.sliding(2).map { case List(prev, current) =>
+          (current - prev) / prev
+        }.toList
 
-        println(s"Évaluation pour la date: $date, prix: $price €")
+        val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
 
-        if (rsi < 30) {
-          println(s"RSI = $rsi : C'est le moment d'ACHETER.")
-        } else if (rsi > 70) {
-          println(s"RSI = $rsi : C'est le moment de VENDRE.")
-        } else {
-          println(s"RSI = $rsi : Pas de signal d'achat ou de vente.")
-        }
+        println(s"\nÉvaluation pour la date: $date, prix: $price €")
+        println(evaluateRSI(selectedPrices))
+        println(evaluateMACD(selectedPrices))
 
-        if (macd.last > signalLine.last) {
-          println(s"MACD = ${macd.last} : Signal d'ACHAT.")
-        } else if (macd.last < signalLine.last) {
-          println(s"MACD = ${macd.last} : Signal de VENTE.")
-        } else {
-          println(s"MACD = ${macd.last} : Pas de signal d'achat ou de vente.")
-        }
-
-        val financialAlgorithm = new FinancialAlgorithm(
-          assets = portfolio.value,
-          liabilities = 0.0,
-          portfolioReturns = portfolio.getReturns,
-          riskFreeRate = 0.01
-        )
-
-        println(s"Volatilité: ${financialAlgorithm.volatility()}")
-        println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio()}")
+        println(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}")
+        println(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}")
 
       case None =>
         println(s"Aucun prix trouvé pour la date: $date")
     }
   }
-
   def simulateTradingForDates(dates: List[LocalDate]): Unit = {
     for (date <- dates) {
       evaluateIndicatorsForDate(date)

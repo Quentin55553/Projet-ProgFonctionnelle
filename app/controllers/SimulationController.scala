@@ -2,14 +2,22 @@ package controllers
 
 import models._
 import java.time.LocalDate
-import models.PriceDate
-import scala.annotation.tailrec
 
 object SimulationController extends App {
 
   val fromDate = LocalDate.of(2025, 2, 14)
   val toDate = LocalDate.of(2025, 3, 14)
   val prices = DataFetcher.fetchHistoricalPrices("AAPL", fromDate, toDate)
+
+  val riskFreeRate = 0.01
+
+  val simulation = new Simulation(prices, riskFreeRate)
+
+  println("Prix historiques récupérés :")
+  prices.foreach { priceDate =>
+    println(s"${priceDate.date} : prix = ${priceDate.price} €")
+  }
+  println()
 
   val lastDate = prices.last.date
 
@@ -39,27 +47,21 @@ object SimulationController extends App {
         prices.find(_.date == dateToEvaluate) match {
           case Some(priceDate) =>
             val selectedPrices = prices.takeWhile(_.date.isBefore(dateToEvaluate.plusDays(1))).map(_.price)
-            val indicators = IndicatorsMarket(selectedPrices)
 
             val returns = selectedPrices.sliding(2).map { case List(prev, current) =>
               (current - prev) / prev
             }.toList
 
-            val financialAlgorithm = FinancialAlgorithm(
-              assets = FinancialAlgorithmController.assets,
-              liabilities = FinancialAlgorithmController.liabilities,
-              portfolioReturns = returns,
-              riskFreeRate = FinancialAlgorithmController.riskFreeRate
-            )
-
+            val indicators = IndicatorsMarket(selectedPrices)
+            val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
             println(s"\nÉvaluation pour la date: $dateToEvaluate, prix: ${priceDate.price} €")
-            println(indicators.evaluateRSI())
-            println(indicators.evaluateMACD())
-            println(s"Volatilité: ${financialAlgorithm.volatility().formatted("%.4f")}")
-            println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio().formatted("%.4f")}")
+            println(simulation.evaluateRSI(selectedPrices))
+            println(simulation.evaluateMACD(selectedPrices))
+            println(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}")
+            println(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}")
 
           case None =>
-            println("Date invalide. Aucun prix trouvé pour cette date.")
+            println(s"Aucun prix trouvé pour la date: $dateToEvaluate")
         }
       }
     } catch {
