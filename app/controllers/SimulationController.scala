@@ -1,4 +1,3 @@
-
 package controllers
 
 import models._
@@ -44,20 +43,7 @@ object SimulationController extends App {
         println(s"1. Prix prédit (Régression Linéaire): $predictedPriceRegression €")
         println(s"2. Prix prédit (Moyenne Mobile - 7 jours): $predictedPriceMA €")
       } else {
-        prices.find(_.date == dateToEvaluate) match {
-          case Some(priceDate) =>
-            val selectedPrices = prices.takeWhile(_.date.isBefore(dateToEvaluate.plusDays(1))).map(_.price)
-            val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
-
-            println(s"\nÉvaluation pour la date: $dateToEvaluate, prix: ${priceDate.price} €")
-            println(simulation.evaluateRSI(selectedPrices))
-            println(simulation.evaluateMACD(selectedPrices))
-            println(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}")
-            println(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}")
-
-          case None =>
-            println(s"Aucun prix trouvé pour la date: $dateToEvaluate")
-        }
+        simulation.evaluateIndicatorsForDate(dateToEvaluate)
       }
     } catch {
       case e: Exception => println("Date invalide. Veuillez entrer une date correcte au format YYYY-MM-DD.")
