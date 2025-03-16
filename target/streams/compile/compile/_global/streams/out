@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\models\FinancialMetrics.java:3:1: `;` expected but `import` found.[0m
+[0m[[0m[31merror[0m] [0m[0mimport math.sqrt[0m
+[0m[[0m[31merror[0m] [0m[0m^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -36,7 +36,7 @@ class PortfolioControllerTest @Inject() (
     (portfolioManager ? GetPortfolio(userId)).mapTo[Portfolio].flatMap { portfolio =>
       val assetFutures = portfolio.assets.map { case (symbol, quantity) =>
         Future {
-          apiHandler.fetchStockInfos(symbol).map { asset =>
+          apiHandler.fetchStockData(symbol).map { asset =>
             symbol -> Json.obj(
               "quantity" -> quantity,
               "price" -> asset.currentPrice,

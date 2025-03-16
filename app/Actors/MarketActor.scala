@@ -17,7 +17,7 @@ class MarketActor()(implicit ec: ExecutionContext, mat: Materializer) extends Ac
 
   val source: Source[String, _] = Source(symbols).throttle(1, 2.seconds)
 
-  val flow: Flow[String, Option[FinancialAsset], _] = Flow[String].map(symbol => apiHandler.fetchStockInfos(symbol))
+  val flow: Flow[String, Option[FinancialAsset], _] = Flow[String].map(symbol => apiHandler.fetchStockData(symbol))
 
   val sink: Sink[Option[FinancialAsset], _] = Sink.foreach {
     case Some(data) => log.info(s"Received market data: $data")

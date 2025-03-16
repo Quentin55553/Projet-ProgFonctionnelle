@@ -32,4 +32,3 @@ object PortfolioMessages {
   implicit val removeAssetFormat: OFormat[RemoveAsset] = Json.format[RemoveAsset]
   implicit val getPortfolioFormat: OFormat[GetPortfolio] = Json.format[GetPortfolio]
 }
-

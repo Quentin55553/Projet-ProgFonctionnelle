@@ -1,9 +1,12 @@
 package api
 
 import data.FinancialAsset
-import java.net.{HttpURLConnection, URI}
-import scala.io.Source
 import play.api.libs.json._
+import scala.util.Random
+import scala.io.Source
+import scala.collection.mutable.ListBuffer
+import java.net.{HttpURLConnection, URI}
+import java.time.LocalDateTime
 
 // Signification des valeurs retournées par l'API :
 // c : Prix actuel (Current price)
@@ -15,11 +18,6 @@ import play.api.libs.json._
 // pc : Prix de clôture précédent (Previous Close Price)
 // t : Timestamp (Date/heure de l'information, en secondes Unix (depuis le 1 janvier 1970))
 
-// À faire :
-// - Méthode pour récupérer le prix des actions (peut-être faire plusieurs méthodes avec des paramètres différents)
-// - Méthode pour récupérer le prix des cryptos (à exécuter car normalement payant)(si c'est bien payant, on génère les valeurs aléatoirement)
-// - Méthode pour récupérer le prix des devises
-// - Méthodes pour récupérer les mouvements récents les plus importants des marchés
 
 class APIHandler() {
     private val baseUrl = "https://finnhub.io/api/v1"
@@ -73,8 +71,102 @@ class APIHandler() {
     }
 
 
-    def fetchStockInfos(stockSymbol: String): Option[FinancialAsset] = {
+    private def generateRandomCryptoData(symbol: String): FinancialAsset = {
+        val random = new Random()
+        val currentPrice = BigDecimal(1000 + random.nextDouble() * 50000).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+        val priceChange = BigDecimal(-100 + random.nextDouble() * 200).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+        val percentChange = BigDecimal(priceChange / currentPrice * 100).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+        val highPrice = currentPrice + random.nextDouble() * 200
+        val lowPrice = currentPrice - random.nextDouble() * 200
+        val openPrice = currentPrice - random.nextDouble() * 50
+        val closePrice = currentPrice + random.nextDouble() * 50
+        val dateTime = LocalDateTime.now()
+
+        FinancialAsset(symbol, currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, dateTime)
+    }
+
+
+    private def generateRandomForexData(symbol: String): FinancialAsset = {
+        val random = new Random()
+        val currentPrice = BigDecimal(1 + random.nextDouble() * 1.5).setScale(4, BigDecimal.RoundingMode.DOWN).toDouble
+        val priceChange = BigDecimal(-0.01 + random.nextDouble() * 0.02).setScale(4, BigDecimal.RoundingMode.DOWN).toDouble
+        val percentChange = BigDecimal(priceChange / currentPrice * 100).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+        val highPrice = currentPrice + random.nextDouble() * 0.02
+        val lowPrice = currentPrice - random.nextDouble() * 0.02
+        val openPrice = currentPrice - random.nextDouble() * 0.01
+        val closePrice = currentPrice + random.nextDouble() * 0.01
+        val dateTime = LocalDateTime.now()
+
+        FinancialAsset(symbol, currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, dateTime)
+    }
+
+
+    private def generateRandomFaHistoricalData(symbol: String, from: LocalDateTime, to: LocalDateTime): List[FinancialAsset] = {
+        val random = new Random()
+        val data = ListBuffer[FinancialAsset]()
+
+        var currentTime = from
+        while (currentTime.isBefore(to)) {
+            val currentPrice = BigDecimal(100 + random.nextDouble() * 500).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+            val priceChange = BigDecimal(-100 + random.nextDouble() * 200).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+            val percentChange = BigDecimal(priceChange / currentPrice * 100).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
+            val highPrice = currentPrice + random.nextDouble() * 50
+            val lowPrice = currentPrice - random.nextDouble() * 50
+            val openPrice = currentPrice - random.nextDouble() * 10
+            val closePrice = currentPrice + random.nextDouble() * 10
+
+            data.append(FinancialAsset(symbol, currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, currentTime))
+
+            currentTime = currentTime.plusHours(1)
+        }
+
+        data.toList
+    }
+
+
+    def fetchStockData(stockSymbol: String): Option[FinancialAsset] = {
         val queryUrl = s"$baseUrl/quote?symbol=$stockSymbol&token=$apiKey"
-        execQuery(queryUrl)
+        execQuery(queryUrl).map(_.copy(symbol = stockSymbol))
+    }
+
+
+    def fetchCryptoData(cryptoSymbol: String): Option[FinancialAsset] = {
+        val supportedCryptos = List("BTCUSD", "ETHUSD", "BNBUSD", "XRPUSD", "ADAUSD", "SOLUSD", "DOGEUSD", "DOTUSD", "MATICUSD", "LTCUSD")
+
+        if (!supportedCryptos.contains(cryptoSymbol.toUpperCase)) {
+            println(s"Crypto non disponible ou inexistante : $cryptoSymbol")
+            return None
+        }
+
+        println(s"Génération aléatoire des données pour $cryptoSymbol...")
+        Some(generateRandomCryptoData(cryptoSymbol.toUpperCase))
+    }
+
+
+    def fetchForexData(forexSymbol: String): Option[FinancialAsset] = {
+        val supportedForexPairs = List("EURUSD", "EURGBP", "EURJPY", "EURCHF", "EURRUB", "EURCNY", "EURAUD", "EURCAD", "EURNZD", "USDGBP", "USDJPY", "USDCAD", "USDAUD", "USDCHF", "USDNZD", "USDRUB", "USDCNY", "GBPJPY", "GBPRUB", "GBPCNY", "GBPAUD", "GBPCAD", "GBPCHF", "GBPNZD")
+
+        if (!supportedForexPairs.contains(forexSymbol.toUpperCase)) {
+            println(s"Paire de devises non disponible ou inexistante : $forexSymbol")
+            return None
+        }
+
+        println(s"Génération aléatoire des données pour $forexSymbol...")
+        Some(generateRandomForexData(forexSymbol.toUpperCase))
+    }
+
+
+    def fetchFinancialAssetData(assetSymbol: String, from: LocalDateTime, to: LocalDateTime): Option[List[FinancialAsset]] = {
+        def isValidDate(date: LocalDateTime): Boolean = {
+            date.getMinute == 0 && date.getSecond == 0
+        }
+
+        if (!isValidDate(from) || !isValidDate(to)) {
+            println("Les dates 'from' et 'to' doivent avoir uniquement l'heure (pas de minutes ou de secondes).")
+            return None
+        }
+
+        println(s"Génération de l'historique des données pour $assetSymbol de $from à $to...")
+        Some(generateRandomFaHistoricalData(assetSymbol, from, to))
     }
 }
