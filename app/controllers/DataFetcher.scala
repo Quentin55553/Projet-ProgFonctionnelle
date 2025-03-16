@@ -6,15 +6,6 @@ import models.PriceDate
 
 object DataFetcher {
 
-  /**
-   * Récupère les prix historiques pour un actif donné sur une période spécifiée.
-   * Ne conserve qu'un seul prix par jour (le premier prix du jour à 00h00).
-   *
-   * @param assetSymbol Le symbole de l'actif (ex: "AAPL").
-   * @param fromDate    La date de début (inclusive).
-   * @param toDate      La date de fin (inclusive).
-   * @return Une liste de PriceDate pour la période demandée.
-   */
   def fetchHistoricalPrices(assetSymbol: String, fromDate: LocalDate, toDate: LocalDate): List[PriceDate] = {
     val apiHandler = new APIHandler()
 
@@ -51,3 +42,4 @@ object DataFetcher {
     }
   }
 }
+
