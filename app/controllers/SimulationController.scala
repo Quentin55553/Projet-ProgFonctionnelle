@@ -51,9 +51,10 @@ object SimulationController extends App {
             val returns = selectedPrices.sliding(2).map { case List(prev, current) =>
               (current - prev) / prev
             }.toList
-
             val indicators = IndicatorsMarket(selectedPrices)
+
             val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
+
             println(s"\nÉvaluation pour la date: $dateToEvaluate, prix: ${priceDate.price} €")
             println(simulation.evaluateRSI(selectedPrices))
             println(simulation.evaluateMACD(selectedPrices))

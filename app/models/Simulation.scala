@@ -12,13 +12,14 @@ class Simulation(prices: List[PriceDate], riskFreeRate: Double) {
     val indicators = IndicatorsMarket(prices)
     indicators.RSI() match {
       case Some(rsi) =>
-        if (rsi < 30) {
-          s"RSI = $rsi : C'est le moment d'ACHETER."
+        val conclusion = if (rsi < 30) {
+          "C'est le moment d'ACHETER (RSI < 30)."
         } else if (rsi > 70) {
-          s"RSI = $rsi : C'est le moment de VENDRE."
+          "C'est le moment de VENDRE (RSI > 70)."
         } else {
-          s"RSI = $rsi : Pas de signal d'achat ou de vente."
+          "Pas de signal d'achat ou de vente (RSI entre 30 et 70)."
         }
+        s"RSI = $rsi : $conclusion"
       case None =>
         "Pas assez de données pour calculer le RSI."
     }
@@ -30,13 +31,14 @@ class Simulation(prices: List[PriceDate], riskFreeRate: Double) {
       case (Some(macd), Some(signalLine)) if macd.nonEmpty && signalLine.nonEmpty =>
         val lastMacd = macd.last
         val lastSignalLine = signalLine.last
-        if (lastMacd > lastSignalLine) {
-          s"MACD = $lastMacd : Signal d'ACHAT."
+        val conclusion = if (lastMacd > lastSignalLine) {
+          "Signal d'ACHAT (MACD > Signal Line)."
         } else if (lastMacd < lastSignalLine) {
-          s"MACD = $lastMacd : Signal de VENTE."
+          "Signal de VENTE (MACD < Signal Line)."
         } else {
-          s"MACD = $lastMacd : Pas de signal d'achat ou de vente."
+          "Pas de signal d'achat ou de vente (MACD = Signal Line)."
         }
+        s"MACD = $lastMacd, Signal Line = $lastSignalLine : $conclusion"
       case _ =>
         "Pas assez de données pour calculer le MACD ou la Signal Line."
     }
