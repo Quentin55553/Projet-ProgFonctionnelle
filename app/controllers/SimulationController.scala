@@ -10,7 +10,6 @@ object SimulationController extends App {
   val prices = DataFetcher.fetchHistoricalPrices("AAPL", fromDate, toDate)
 
   val riskFreeRate = 0.01
-
   val simulation = new Simulation(prices, riskFreeRate)
 
   println("Prix historiques récupérés :")
@@ -47,12 +46,6 @@ object SimulationController extends App {
         prices.find(_.date == dateToEvaluate) match {
           case Some(priceDate) =>
             val selectedPrices = prices.takeWhile(_.date.isBefore(dateToEvaluate.plusDays(1))).map(_.price)
-
-            val returns = selectedPrices.sliding(2).map { case List(prev, current) =>
-              (current - prev) / prev
-            }.toList
-            val indicators = IndicatorsMarket(selectedPrices)
-
             val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
 
             println(s"\nÉvaluation pour la date: $dateToEvaluate, prix: ${priceDate.price} €")

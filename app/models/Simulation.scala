@@ -4,10 +4,6 @@ import java.time.LocalDate
 
 class Simulation(prices: List[PriceDate], riskFreeRate: Double) {
 
-  def findPriceByDate(date: LocalDate): Option[Double] = {
-    prices.find(_.date.isEqual(date)).map(_.price)
-  }
-
   def evaluateRSI(prices: List[Double]): String = {
     val indicators = IndicatorsMarket(prices)
     indicators.RSI() match {
@@ -45,30 +41,19 @@ class Simulation(prices: List[PriceDate], riskFreeRate: Double) {
   }
 
   def evaluateIndicatorsForDate(date: LocalDate): Unit = {
-    findPriceByDate(date) match {
-      case Some(price) =>
+    prices.find(_.date.isEqual(date)) match {
+      case Some(priceDate) =>
         val selectedPrices = prices.takeWhile(_.date.isBefore(date.plusDays(1))).map(_.price)
-
-        val returns = selectedPrices.sliding(2).map { case List(prev, current) =>
-          (current - prev) / prev
-        }.toList
-
         val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
 
-        println(s"\nÉvaluation pour la date: $date, prix: $price €")
+        println(s"\nÉvaluation pour la date: $date, prix: ${priceDate.price} €")
         println(evaluateRSI(selectedPrices))
         println(evaluateMACD(selectedPrices))
-
         println(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}")
         println(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}")
 
       case None =>
         println(s"Aucun prix trouvé pour la date: $date")
-    }
-  }
-  def simulateTradingForDates(dates: List[LocalDate]): Unit = {
-    for (date <- dates) {
-      evaluateIndicatorsForDate(date)
     }
   }
 }

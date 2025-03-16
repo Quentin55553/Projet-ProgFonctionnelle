@@ -8,7 +8,6 @@ object DataFetcher {
 
   def fetchHistoricalPrices(assetSymbol: String, fromDate: LocalDate, toDate: LocalDate): List[PriceDate] = {
     val apiHandler = new APIHandler()
-
     val fromDateTime = LocalDateTime.of(fromDate, java.time.LocalTime.MIDNIGHT)
     val toDateTime = LocalDateTime.of(toDate, java.time.LocalTime.MIDNIGHT)
 
@@ -42,4 +41,3 @@ object DataFetcher {
     }
   }
 }
-
