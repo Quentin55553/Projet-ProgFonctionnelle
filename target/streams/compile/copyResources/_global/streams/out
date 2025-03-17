@@ -1,0 +1,5 @@
+[0m[[0m[0mdebug[0m] [0m[0mCopy resource mappings: [0m
+[0m[[0m[0mdebug[0m] [0m[0m	(H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\conf\application.conf,H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\target\scala-2.13\classes\application.conf)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\conf\logback.xml,H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\target\scala-2.13\classes\logback.xml)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\conf\messages,H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\target\scala-2.13\classes\messages)[0m
+[0m[[0m[0mdebug[0m] [0m[0m	(H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\conf\routes,H:\Desktop\Projet-ProgFonctionnelle- Principale (4)\target\scala-2.13\classes\routes)[0m

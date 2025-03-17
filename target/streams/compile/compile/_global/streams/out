@@ -1,0 +1,9 @@
+[0m[[0m[33mwarn[0m] [0m[0mH:\Desktop\Projet-ProgFonctionnelle- Principale (4)\app\controllers\SimulationController.scala:94:67: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor use the `f""` string interpolator. In Java 15 and later, `formatted` resolves to the new method in String which has reversed parameters.[0m
+[0m[[0m[33mwarn[0m] [0m[0m          println(s"Volatilité: ${financialAlgorithm.volatility().formatted("%.4f")}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mH:\Desktop\Projet-ProgFonctionnelle- Principale (4)\app\controllers\SimulationController.scala:95:70: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor use the `f""` string interpolator. In Java 15 and later, `formatted` resolves to the new method in String which has reversed parameters.[0m
+[0m[[0m[33mwarn[0m] [0m[0m          println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio().formatted("%.4f")}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
