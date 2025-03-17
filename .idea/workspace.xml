@@ -5,8 +5,226 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="da8e3693-003d-469f-a51f-766149a506ec" name="Changes" comment="a">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_model_core_2_13_1_7_11_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_shared_ws_2_13_1_3_22_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_actor_2_13_2_8_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_http_2_13_10_5_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_http_core_2_13_10_5_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_parsing_2_13_10_5_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_serialization_jackson_2_13_2_8_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_slf4j_2_13_2_8_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_stream_2_13_2_8_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_jdbc_api_2_13_2_8_16_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_jdbc_evolutions_2_13_2_8_16_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_slick_2_13_5_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_slick_evolutions_2_13_5_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_slick_slick_2_13_3_4_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_slick_slick_hikaricp_2_13_3_4_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_zaxxer_HikariCP_4_0_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__io_spray_spray_json_2_13_1_3_6_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__net_bytebuddy_byte_buddy_agent_1_12_19_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_pekko_pekko_actor_2_13_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_pekko_pekko_actor_typed_2_13_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_pekko_pekko_protobuf_v3_2_13_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_pekko_pekko_serialization_jackson_2_13_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_pekko_pekko_slf4j_2_13_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_apache_pekko_pekko_stream_2_13_1_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_mindrot_jbcrypt_0_4_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_mockito_mockito_core_4_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_objenesis_objenesis_3_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_cachecontrol_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_ahc_ws_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_ahc_ws_standalone_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_build_link_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_configuration_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_exceptions_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_functional_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_guice_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_json_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_server_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_streams_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_test_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_ws_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_ws_standalone_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_ws_standalone_json_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_play_ws_standalone_xml_2_13_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_shaded_asynchttpclient_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_shaded_oauth_3_0_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_playframework_twirl_twirl_api_2_13_2_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_postgresql_postgresql_42_7_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scala_lang_modules_scala_collection_compat_2_13_2_8_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_compatible_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_core_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_diagrams_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_featurespec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_flatspec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_freespec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_funspec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_funsuite_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_matchers_core_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_mustmatchers_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_propspec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_refspec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_shouldmatchers_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_wordspec_2_13_3_2_17_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatestplus_mockito_4_11_2_13_3_2_17_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatestplus_selenium_4_12_2_13_3_2_17_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_api_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_chromium_driver_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_devtools_v117_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_devtools_v118_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_devtools_v119_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_http_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_java_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_json_4_15_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/User.scala" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.bsp/sbt.json" beforeDir="false" afterPath="$PROJECT_DIR$/.bsp/sbt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_codeborne_phantomjsdriver_1_4_4_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_client3_akka_http_backend_2_13_3_8_15_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_client3_akka_http_backend_2_13_3_10_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_client3_core_2_13_3_8_15_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_client3_core_2_13_3_10_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_model_core_2_13_1_5_5_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_shared_akka_2_13_1_3_13_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_shared_akka_2_13_1_3_22_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_shared_core_2_13_1_3_13_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_shared_core_2_13_1_3_22_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_softwaremill_sttp_shared_ws_2_13_1_3_13_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_squareup_okhttp3_okhttp_3_11_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_squareup_okio_okio_1_14_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_actor_2_13_2_6_21_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_actor_typed_2_13_2_6_21_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_actor_typed_2_13_2_8_7_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_http_2_13_10_2_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_http_core_2_13_10_2_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_parsing_2_13_10_2_10_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_protobuf_v3_2_13_2_6_21_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_protobuf_v3_2_13_2_8_7_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_serialization_jackson_2_13_2_6_21_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_slf4j_2_13_2_6_21_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_akka_akka_stream_2_13_2_6_21_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_cachecontrol_2_13_2_0_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_ahc_ws_2_13_2_8_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_ahc_ws_standalone_2_13_2_1_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_ws_2_13_2_8_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_2_13_2_1_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_json_2_13_2_1_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_play_ws_standalone_xml_2_13_2_1_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_shaded_asynchttpclient_2_1_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__com_typesafe_play_shaded_oauth_2_1_2_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_checkerframework_checker_qual_3_37_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_checkerframework_checker_qual_3_41_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalactic_scalactic_2_13_3_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatest_scalatest_2_13_3_1_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatestplus_play_scalatestplus_play_2_13_5_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatestplus_play_scalatestplus_play_2_13_7_0_1_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_scalatestplus_selenium_3_141_2_13_3_1_1_0_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_api_4_14_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_chrome_driver_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_chrome_driver_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_devtools_v85_4_14_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_devtools_v85_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_edge_driver_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_edge_driver_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_firefox_driver_4_14_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_firefox_driver_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_http_4_14_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_ie_driver_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_ie_driver_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_java_3_141_59_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_json_4_14_1_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_manager_4_14_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_manager_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_opera_driver_3_141_59_jar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_os_4_14_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_os_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_remote_driver_4_14_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_remote_driver_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_safari_driver_3_141_59_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_safari_driver_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_support_4_14_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/sbt__org_seleniumhq_selenium_selenium_support_4_15_0_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Akka.Akka-build.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Akka.Akka-build.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/Akka.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/Akka.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/play2_project_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/play2_project_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Prevision.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Prevision.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/HomeControllerWahaj.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/PortfolioControllerTest.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/PortfolioControllerTest.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserControllerWahaj.scala" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/UserRepository.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repository/UserRepository.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/data/FinancialAsset.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/data/FinancialAsset.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.sbt" beforeDir="false" afterPath="$PROJECT_DIR$/build.sbt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/conf/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$216aee5c92d0b69c3a3d$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$216aee5c92d0b69c3a3d.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$216aee5c92d0b69c3a3d.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6ce440efece284709bdd$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6ce440efece284709bdd.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$6ce440efece284709bdd.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$9f3b592355bedf808e82$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$9f3b592355bedf808e82.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$9f3b592355bedf808e82.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a07314525b7ddbcac338$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a07314525b7ddbcac338.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$a07314525b7ddbcac338.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c5d30cb454c86a510f90$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c5d30cb454c86a510f90.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$c5d30cb454c86a510f90.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f98e73309c2589fbc7c2$.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f98e73309c2589fbc7c2.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/config-classes/$f98e73309c2589fbc7c2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/copyResources/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Actors/MarketActor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Actors/MarketActor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Models/Portfolio$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Models/Portfolio$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/Models/Portfolio.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/Models/Portfolio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/api/APIHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/api/APIHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/application.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/PortfolioControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/PortfolioControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/ReversePortfolioControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/ReversePortfolioControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/SimulationController$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/SimulationController$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/SimulationController$delayedInit$body.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/SimulationController$delayedInit$body.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/javascript/ReversePortfolioControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/javascript/ReversePortfolioControllerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/routes$javascript.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/routes$javascript.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/routes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/data/FinancialAsset$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/data/FinancialAsset$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/data/FinancialAsset.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/data/FinancialAsset.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/router/Routes$$anonfun$routes$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/router/Routes$$anonfun$routes$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/router/Routes.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/router/Routes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/routes" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/routes" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/index$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/index$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/main$.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/ReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/ReverseRoutes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/routes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/router/Routes.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/sync/copy-resource" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/sync/copy-resource" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/index.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/index.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/main.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/main.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/update/update_cache_2.13/inputs" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/update/update_cache_2.13/inputs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/update/update_cache_2.13/output" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/update/update_cache_2.13/output" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/_global/streams/sync-exported-assets-web-assets" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/_global/_global/streams/sync-exported-assets-web-assets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/csrLogger/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/_global/dumpStructure/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/input_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/input_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/dependencyPositions/_global/streams/update_cache_2.13/output_dsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/ivyConfiguration/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/ivyConfiguration/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/update/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/update/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.13/inputs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/_global/updateClassifiers/_global/streams/update_cache_2.13/output" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/discoveredMainClasses/data" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/_global/_global/discoveredMainClasses/data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/dependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/dependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/internalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/internalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/managedClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/_global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/_global/streams/op-cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/runtime/externalDependencyClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/externalDependencyClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/runtime/managedClasspath/_global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/runtime/managedClasspath/_global/streams/export" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/externalDependencyClasspath/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/managedClasspath/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/unmanagedClasspath/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/unmanagedClasspath/_global/streams/out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/test/unmanagedJars/_global/streams/export" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/web-assets/assets/_global/streams/sync-assets-web-assets" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/web-assets/assets/_global/streams/sync-assets-web-assets" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +257,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Package Object" />
       </list>
     </option>
   </component>
@@ -50,6 +269,18 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;SEMGOODD&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Quentin55553/Projet-ProgFonctionnelle&quot;,
+    &quot;accountId&quot;: &quot;8c298072-66ac-46db-acc1-f22e5f3b69b7&quot;
+  }
+}</component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -69,6 +300,9 @@
   <component name="ProjectCodeStyleSettingsMigration">
     <option name="version" value="2" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2uGz9Fy9Uc2k2dKG1e5YV8s2l7I" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -77,21 +311,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "creationPortfolio",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Play App.Play 2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;creationPortfolio&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Play 2" type="Play2FrameworkRunConfigurations" factoryName="Play 2 App" temporary="true" show_console_on_std_err="false" show_console_on_std_out="false">
       <module name="Akka" />
@@ -122,9 +358,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Play App.Play 2" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ScalaProjectSettings">
     <option name="migrateConfigurationsNotificationShown" value="true" />
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.19416.15" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.19416.15" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -162,6 +411,8 @@
       <workItem from="1742049888487" duration="318000" />
       <workItem from="1742050789782" duration="444000" />
       <workItem from="1742147558644" duration="199000" />
+      <workItem from="1742247065960" duration="5153000" />
+      <workItem from="1742255455816" duration="302000" />
     </task>
     <task id="LOCAL-00004" summary="a">
       <created>1741966848936</created>

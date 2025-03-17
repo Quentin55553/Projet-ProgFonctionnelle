@@ -34,4 +34,6 @@ object FinancialAsset {
     )((currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, dateTime) =>
         FinancialAsset("", currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, dateTime)
     )
+    implicit val financialAssetWrites: Writes[FinancialAsset] = Json.writes[FinancialAsset]
+
 }

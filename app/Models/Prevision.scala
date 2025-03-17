@@ -1,4 +1,4 @@
-package models
+package Models
 
 class Prevision(prices: List[Double]) {
 

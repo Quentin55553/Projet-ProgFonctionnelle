@@ -4,8 +4,8 @@ import javax.inject._
 import play.api.mvc._
 import play.api.libs.json._
 import scala.concurrent.{ExecutionContext, Future}
-import repositories.UserRepository
-import models.User
+import Repository.UserRepository
+import Models.User
 
 @Singleton
 class UserController @Inject()(cc: ControllerComponents, userRepository: UserRepository)(implicit ec: ExecutionContext) extends AbstractController(cc) {
@@ -46,10 +46,15 @@ class UserController @Inject()(cc: ControllerComponents, userRepository: UserRep
     (usernameOpt, passwordOpt) match {
       case (Some(username), Some(password)) =>
         userRepository.authenticate(username, password).map {
-          case Some(user) => Ok(Json.obj("status" -> "success", "message" -> s"Bienvenue, ${user.username}"))
-          case None => Unauthorized(Json.obj("status" -> "error", "message" -> "Nom d'utilisateur ou mot de passe incorrect"))
+          case Some(user) =>
+            Ok(Json.obj("status" -> "success", "message" -> "Connexion réussie", "username" -> user.username))
+              .withSession("username" -> user.username)
+          case None =>
+            Unauthorized(Json.obj("status" -> "error", "message" -> "Nom d'utilisateur ou mot de passe incorrect"))
         }
-      case _ => Future.successful(BadRequest(Json.obj("status" -> "error", "message" -> "Paramètres manquants")))
+      case _ =>
+        Future.successful(BadRequest(Json.obj("status" -> "error", "message" -> "Paramètres manquants")))
     }
   }
+
 }
