@@ -5,7 +5,7 @@ import play.api.mvc._
 import play.api.libs.json._
 import scala.concurrent.{ExecutionContext, Future}
 import Repository.UserRepository
-import Models.User
+import models.User
 
 @Singleton
 class UserController @Inject()(cc: ControllerComponents, userRepository: UserRepository)(implicit ec: ExecutionContext) extends AbstractController(cc) {

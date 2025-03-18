@@ -1,6 +1,6 @@
 package Repository
 
-import Models.User
+import models.User
 import org.mindrot.jbcrypt.BCrypt
 import play.api.db.slick.DatabaseConfigProvider
 import slick.jdbc.JdbcProfile

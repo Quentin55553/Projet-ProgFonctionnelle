@@ -1,7 +1,7 @@
 package Actors
 
 import akka.actor.{Actor, ActorLogging}
-import Models._
+import models.{AddAsset, GetPortfolio, Portfolio, RemoveAsset}
 
 class PortfolioActor extends Actor with ActorLogging {
   var portfolios: Map[String, Portfolio] = Map.empty

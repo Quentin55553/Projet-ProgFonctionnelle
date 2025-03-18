@@ -18,11 +18,10 @@ import java.time.LocalDateTime
 // pc : Prix de clôture précédent (Previous Close Price)
 // t : Timestamp (Date/heure de l'information, en secondes Unix (depuis le 1 janvier 1970))
 
-
 class APIHandler() {
     private val baseUrl = "https://finnhub.io/api/v1"
     private val apiKey = "cv2vkohr01qk43tvjktgcv2vkohr01qk43tvjku0"
-
+    private val random = new Random(42)
 
     private def openConnection(requestUrl: String): HttpURLConnection = {
         val uri = new URI(requestUrl)
@@ -31,7 +30,6 @@ class APIHandler() {
         connection.setRequestMethod("GET")
         connection
     }
-
 
     private def execQuery(queryUrl: String): Option[FinancialAsset] = {
         var attempts = 0
@@ -70,9 +68,7 @@ class APIHandler() {
         None
     }
 
-
     private def generateRandomCryptoData(symbol: String): FinancialAsset = {
-        val random = new Random()
         val currentPrice = BigDecimal(1000 + random.nextDouble() * 50000).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
         val priceChange = BigDecimal(-100 + random.nextDouble() * 200).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
         val percentChange = BigDecimal(priceChange / currentPrice * 100).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
@@ -85,9 +81,7 @@ class APIHandler() {
         FinancialAsset(symbol, currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, dateTime)
     }
 
-
     private def generateRandomForexData(symbol: String): FinancialAsset = {
-        val random = new Random()
         val currentPrice = BigDecimal(1 + random.nextDouble() * 1.5).setScale(4, BigDecimal.RoundingMode.DOWN).toDouble
         val priceChange = BigDecimal(-0.01 + random.nextDouble() * 0.02).setScale(4, BigDecimal.RoundingMode.DOWN).toDouble
         val percentChange = BigDecimal(priceChange / currentPrice * 100).setScale(2, BigDecimal.RoundingMode.DOWN).toDouble
@@ -100,9 +94,7 @@ class APIHandler() {
         FinancialAsset(symbol, currentPrice, priceChange, percentChange, highPrice, lowPrice, openPrice, closePrice, dateTime)
     }
 
-
     private def generateRandomFaHistoricalData(symbol: String, from: LocalDateTime, to: LocalDateTime): List[FinancialAsset] = {
-        val random = new Random()
         val data = ListBuffer[FinancialAsset]()
 
         var currentTime = from
@@ -123,12 +115,10 @@ class APIHandler() {
         data.toList
     }
 
-
     def fetchStockData(stockSymbol: String): Option[FinancialAsset] = {
         val queryUrl = s"$baseUrl/quote?symbol=$stockSymbol&token=$apiKey"
         execQuery(queryUrl).map(_.copy(symbol = stockSymbol))
     }
-
 
     def fetchCryptoData(cryptoSymbol: String): Option[FinancialAsset] = {
         val supportedCryptos = List("BTCUSD", "ETHUSD", "BNBUSD", "XRPUSD", "ADAUSD", "SOLUSD", "DOGEUSD", "DOTUSD", "MATICUSD", "LTCUSD")
@@ -142,7 +132,6 @@ class APIHandler() {
         Some(generateRandomCryptoData(cryptoSymbol.toUpperCase))
     }
 
-
     def fetchForexData(forexSymbol: String): Option[FinancialAsset] = {
         val supportedForexPairs = List("EURUSD", "EURGBP", "EURJPY", "EURCHF", "EURRUB", "EURCNY", "EURAUD", "EURCAD", "EURNZD", "USDGBP", "USDJPY", "USDCAD", "USDAUD", "USDCHF", "USDNZD", "USDRUB", "USDCNY", "GBPJPY", "GBPRUB", "GBPCNY", "GBPAUD", "GBPCAD", "GBPCHF", "GBPNZD")
 
@@ -154,7 +143,6 @@ class APIHandler() {
         println(s"Génération aléatoire des données pour $forexSymbol...")
         Some(generateRandomForexData(forexSymbol.toUpperCase))
     }
-
 
     def fetchFinancialAssetData(assetSymbol: String, from: LocalDateTime, to: LocalDateTime): Option[List[FinancialAsset]] = {
         def isValidDate(date: LocalDateTime): Boolean = {
