@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Page de Connexion et Inscription</title>
+    <style>
+        .container { display: flex; justify-content: space-around; }
+        .section { width: 45%; border: 1px solid #ccc; padding: 20px; border-radius: 4px; }
+        h2 { text-align: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Section de connexion -->
+    <div class="section">
+        <h2>Connexion</h2>
+        <form method="POST" action="/login">
+            <label>Nom d'utilisateur:</label>
+            <input type="text" name="username" />
+            <br/><br/>
+            <label>Mot de passe:</label>
+            <input type="password" name="password" />
+            <br/><br/>
+            <input type="submit" value="Se connecter" />
+        </form>
+    </div>
+
+    <!-- Section d'inscription -->
+    <div class="section">
+        <h2>Inscription</h2>
+        <form method="POST" action="/register">
+            <label>Nom d'utilisateur:</label>
+            <input type="text" name="username" />
+            <br/><br/>
+            <label>Mot de passe:</label>
+            <input type="password" name="password" />
+            <br/><br/>
+            <input type="submit" value="S'inscrire" />
+        </form>
+    </div>
+</div>
+</body>
+</html>
