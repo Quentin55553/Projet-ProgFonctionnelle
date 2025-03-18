@@ -1,0 +1,3 @@
+2025-03-18 13:48:43 [31mWARN [0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(FinancialSystem)[0;39m Dev use only. Free keys at https://akka.io/key
+2025-03-18 13:48:44 [31mWARN [0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(application)[0;39m Dev use only. Free keys at https://akka.io/key
+2025-03-18 13:48:45 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
