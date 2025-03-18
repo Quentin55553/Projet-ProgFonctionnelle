@@ -165,3 +165,34 @@
 [0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
 [0m[[0m[0minfo[0m] [0m[0mcompiling 3 Scala sources to C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\target\scala-2.13\classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\app\controllers\SimulationController.scala:33:29: not found: type Prevision[0m
+[0m[[0m[31merror[0m] [0m[0m        val prevision = new Prevision(selectedPrices)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 3 Scala sources to C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\target\scala-2.13\classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 1 Scala source to C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\target\scala-2.13\classes ...[0m
+[0m[[0m[31merror[0m] [0m[0mC:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\app\controllers\SimulationController.scala:33:29: not found: type Prevision[0m
+[0m[[0m[31merror[0m] [0m[0m        val prevision = new Prevision(selectedPrices)[0m
+[0m[[0m[31merror[0m] [0m[0m                            ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 4 Scala sources to C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\target\scala-2.13\classes ...[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\app\controllers\SimulationController.scala:57:67: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor use the `f""` string interpolator. In Java 15 and later, `formatted` resolves to the new method in String which has reversed parameters.[0m
+[0m[[0m[33mwarn[0m] [0m[0m            println(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\app\controllers\SimulationController.scala:58:73: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
+[0m[[0m[33mwarn[0m] [0m[0mor use the `f""` string interpolator. In Java 15 and later, `formatted` resolves to the new method in String which has reversed parameters.[0m
+[0m[[0m[33mwarn[0m] [0m[0m            println(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                        ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0mdebug[0m] [0m[0mExporting web-assets:akka[0m

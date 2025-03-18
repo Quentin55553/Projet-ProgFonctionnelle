@@ -1,7 +1,9 @@
 
 package controllers
 
-import models._
+import Models._
+import models.{FinancialMetrics, Simulation}
+
 import java.time.LocalDate
 
 object SimulationController extends App {
