@@ -1,7 +1,7 @@
 # Projet de programmation fonctionnelle
 
 <div>
-  <img src="public/images/CYTechLogo.png" style="width: 40%;">
+  <img src="frontend/public/images/CYTechLogo.png" style="width: 40%;">
 </div>
 
 ## 📋 Projet
@@ -12,7 +12,7 @@ Description projet (Je le ferai (Quentin) quand on aura au moins bien avancé da
 
 <div align="center">
   Gif de présentation du projet
-  <img src="public/images/.gif" />
+  <img src="frontend/public/images/.gif" />
 </div>
 
 ## 🚀 Lancer l'application
