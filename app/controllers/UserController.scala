@@ -9,8 +9,6 @@ import models.User
 
 @Singleton
 class UserController @Inject()(cc: ControllerComponents, userRepository: UserRepository)(implicit ec: ExecutionContext) extends AbstractController(cc) {
-
-
   implicit val userFormat: OFormat[User] = Json.format[User]
 
   /**
@@ -45,12 +43,13 @@ class UserController @Inject()(cc: ControllerComponents, userRepository: UserRep
           case Some(user) =>
             Ok(Json.obj("status" -> "success", "message" -> "Connexion réussie", "username" -> user.username))
               .withSession("username" -> user.username)
+
           case None =>
             Unauthorized(Json.obj("status" -> "error", "message" -> "Nom d'utilisateur ou mot de passe incorrect"))
         }
+
       case _ =>
         Future.successful(BadRequest(Json.obj("status" -> "error", "message" -> "Paramètres manquants")))
     }
   }
-
 }
