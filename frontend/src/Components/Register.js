@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Register() {
     const [username, setUsername] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const navigate = useNavigate();
+
 
     const handleRegister = async (e) => {
         e.preventDefault();
@@ -18,6 +20,7 @@ function Register() {
         });
 
         const data = await response.json();
+
         if (response.ok) {
             setMessage("Compte créé avec succès !");
             setTimeout(() => navigate("/login"), 2000); // Redirige vers connexion après 2 sec
@@ -29,7 +32,9 @@ function Register() {
     return (
         <div>
             <h2>Inscription</h2>
+
             {message && <p>{message}</p>}
+
             <form onSubmit={handleRegister}>
                 <input type="text" placeholder="Nom d'utilisateur" value={username} onChange={(e) => setUsername(e.target.value)} required />
                 <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />

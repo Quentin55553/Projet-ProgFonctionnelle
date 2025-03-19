@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -23,9 +24,11 @@ function Login() {
                 setTimeout(() => {
                     navigate("/welcome", { state: { username: data.username } }); // Correction ici
                 }, 1500);
+
             } else {
                 setMessage(data.message);
             }
+
         } catch (error) {
             setMessage("Erreur de connexion. Vérifie ton serveur.");
         }
@@ -42,12 +45,14 @@ function Login() {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
+
                 <input
                     type="password"
                     placeholder="Mot de passe"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
+
                 <button type="submit">Se connecter</button>
             </form>
         </div>
