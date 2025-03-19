@@ -8,6 +8,7 @@ import slick.lifted.ProvenShape
 
 import javax.inject.{Inject, Singleton}
 import scala.concurrent.{ExecutionContext, Future}
+import scala.util.matching.Regex
 
 @Singleton
 class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implicit ec: ExecutionContext) {
@@ -21,18 +22,26 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
     def id: Rep[Int] = column[Int]("id", O.PrimaryKey, O.AutoInc)
     def username: Rep[String] = column[String]("username", O.Unique)
     def password_hash: Rep[String] = column[String]("password_hash")
+    def email = column[String]("email", O.Unique)
 
-    def * : ProvenShape[User] = (id.?, username, password_hash) <> ((User.apply _).tupled, User.unapply)
+    def * : ProvenShape[User] = (id.?, username, password_hash, email) <> ((User.apply _).tupled, User.unapply)
   }
 
 
   lazy val users = TableQuery[UsersTable]
+  private val emailRegex: Regex = "^[\\w-\\.]+@(gmail\\.com|yahoo\\.com|outlook\\.com|gmail\\.fr)$".r
+
+  def isValidEmail(email: String): Boolean = emailRegex.matches(email)
 
 
-  def addUser(username: String, password: String): Future[Int] = {
-    val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
-    val insertQuery = (users returning users.map(_.id)) += User(None, username, hashedPassword)
-    dbConfig.db.run(insertQuery)
+  def addUser(username: String, email: String, password: String): Future[Either[String, Int]] = {
+    if (!isValidEmail(email)) {
+      Future.successful(Left("Email invalide. Utilisez une adresse Gmail, Yahoo ou Outlook."))
+    } else {
+      val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
+      val insertQuery = (users returning users.map(_.id)) += User(None, username, email, hashedPassword)
+      dbConfig.db.run(insertQuery).map(Right(_))
+    }
   }
 
 

@@ -1,8 +1,9 @@
-2025-03-18 11:05:14 [31mWARN [0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(FinancialSystem)[0;39m Dev use only. Free keys at https://akka.io/key
-2025-03-18 11:05:15 [31mWARN [0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(application)[0;39m Dev use only. Free keys at https://akka.io/key
-2025-03-18 11:05:16 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
-2025-03-18 11:18:36 [1;31mERROR[0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(play-dev-mode)[0;39m Akka terminated. Obtain free keys at https://akka.io/key
-2025-03-18 11:18:36 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Stopping Akka HTTP server...
-2025-03-18 11:18:36 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Unbinding /[0:0:0:0:0:0:0:0]:9000
-2025-03-18 11:18:36 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
-2025-03-18 11:18:36 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Running provided shutdown stop hooks
+2025-03-19 14:11:36 [31mWARN [0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(FinancialSystem)[0;39m Dev use only. Free keys at https://akka.io/key
+2025-03-19 14:11:37 [31mWARN [0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(application)[0;39m Dev use only. Free keys at https://akka.io/key
+2025-03-19 14:11:38 [34mINFO [0;39m [36mplay.api.Play[0;39m [35m[0;39m Application started (Dev) (no global state)
+2025-03-19 14:23:38 [31mWARN [0;39m [36mcom.zaxxer.hikari.pool.HikariPool[0;39m [35m[0;39m db - Thread starvation or clock leap detected (housekeeper delta=3m10s177ms423µs800ns).
+2025-03-19 14:25:26 [1;31mERROR[0;39m [36makka.actor.ActorSystemImpl[0;39m [35makka.actor.ActorSystemImpl(play-dev-mode)[0;39m Akka terminated. Obtain free keys at https://akka.io/key
+2025-03-19 14:25:26 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Stopping Akka HTTP server...
+2025-03-19 14:25:26 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Unbinding /[0:0:0:0:0:0:0:0]:9000
+2025-03-19 14:25:26 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Terminating server binding for /[0:0:0:0:0:0:0:0]:9000
+2025-03-19 14:25:26 [34mINFO [0;39m [36mplay.core.server.AkkaHttpServer[0;39m [35m[0;39m Running provided shutdown stop hooks

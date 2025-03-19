@@ -5,7 +5,7 @@ function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [message, setMessage] = useState("");
-    const navigate = useNavigate(); // Utilise useNavigate pour rediriger
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ function Login() {
             if (response.ok) {
                 setMessage(`Bienvenue, ${data.username}`);
                 setTimeout(() => {
-                    navigate("/welcome"); // Redirige vers la page Welcome
+                    navigate("/welcome", { state: { username: data.username } }); // Correction ici
                 }, 1500);
             } else {
                 setMessage(data.message);

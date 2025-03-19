@@ -19,22 +19,18 @@ class UserController @Inject()(cc: ControllerComponents, userRepository: UserRep
    */
   def register: Action[JsValue] = Action.async(parse.json) { request =>
     val usernameOpt = (request.body \ "username").asOpt[String]
+    val emailOpt = (request.body \ "email").asOpt[String]
     val passwordOpt = (request.body \ "password").asOpt[String]
 
-    (usernameOpt, passwordOpt) match {
-      case (Some(username), Some(password)) =>
-        userRepository.authenticate(username, password).flatMap {
-          case Some(_) =>
-            Future.successful(Conflict(Json.obj("status" -> "error", "message" -> "Nom d'utilisateur déjà pris")))
-          case None =>
-            userRepository.addUser(username, password).map { userId =>
-              Created(Json.obj("status" -> "success", "userId" -> userId))
-            }
+    (usernameOpt, emailOpt, passwordOpt) match {
+      case (Some(username), Some(email), Some(password)) =>
+        userRepository.addUser(username, email, password).map {
+          case Right(userId) => Created(Json.obj("status" -> "success", "userId" -> userId))
+          case Left(errorMessage) => BadRequest(Json.obj("status" -> "error", "message" -> errorMessage))
         }
-      case _ => Future.successful(BadRequest(Json.obj("status" -> "error", "message" -> "Nom d'utilisateur ou mot de passe manquant")))
+      case _ => Future.successful(BadRequest(Json.obj("status" -> "error", "message" -> "Données incomplètes")))
     }
   }
-
   /**
    * Connexion d'un utilisateur
    * @return Succès ou échec de l'authentification

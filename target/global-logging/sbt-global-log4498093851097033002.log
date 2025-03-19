@@ -9,11 +9,11 @@
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(onFailure loadFailed, None, None)[0m
 [0m[[0m[0mdebug[0m] [0m[0m> Exec(loadp, None, None)[0m
 [0m[[0m[0minfo[0m] [0m[0mwelcome to sbt 1.10.7 (Oracle Corporation Java 17.0.12)[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.defaultLoad until apply took 227.1849ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: plugins took 103.9954ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: defsScala took 0.6498ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.defaultLoad until apply took 522.1769ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: plugins took 237.5818ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: defsScala took 0.8176ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\project[0m
-[0m[[0m[0mdebug[0m] [0m[0m            Load.loadUnit: mkEval took 5.2317ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.loadUnit: mkEval took 20.1789ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Found non-root projects [0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\project, returning: ()[0m
 [0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
@@ -29,27 +29,27 @@
 [0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))[0m
 [0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))[0m
 [0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)[0m
-[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 25.8898 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 93.0632 ms[0m
 [0m[[0m[0minfo[0m] [0m[0mloading settings for project projet-progfonctionnelle-principale-build from plugins.sbt...[0m
-[0m[[0m[0mdebug[0m] [0m[0m              Load.resolveProject(projet-progfonctionnelle-principale-build) took 59.6283ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m            Load.loadTransitive: finalizeProject(Project(id projet-progfonctionnelle-principale-build, base: C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\project, plugins: List(<none>))) took 113.4142ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m              Load.resolveProject(projet-progfonctionnelle-principale-build) took 184.8035ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m            Load.loadTransitive: finalizeProject(Project(id projet-progfonctionnelle-principale-build, base: C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\project, plugins: List(<none>))) took 335.3259ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\project, returning: (projet-progfonctionnelle-principale-build)[0m
-[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: loadedProjectsRaw took 548.3652ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: cleanEvalClasses took 18.6264ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m        Load.loadUnit(file:/C:/Users/HP/OneDrive/Documents/S4/Scala/Projet-ProgFonctionnelle-Principale/project/, ...) took 679.5658ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: load took 875.6663ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: resolveProjects took 7.7854ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: finalTransforms took 80.6091ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: config.delegates took 11.7024ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: Def.make(settings)... took 511.6416ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: structureIndex took 97.1512ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: mkStreams took 1.3565ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: loadedProjectsRaw took 1503.9749ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m          Load.loadUnit: cleanEvalClasses took 52.9737ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m        Load.loadUnit(file:/C:/Users/HP/OneDrive/Documents/S4/Scala/Projet-ProgFonctionnelle-Principale/project/, ...) took 1813.4545ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: load took 2385.4308ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: resolveProjects took 18.2886ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: finalTransforms took 227.124ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: config.delegates took 22.1706ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: Def.make(settings)... took 1563.0103ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: structureIndex took 392.992ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.apply: mkStreams took 8.206ms[0m
 [0m[[0m[0minfo[0m] [0m[0mloading project definition from C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale\project[0m
 [0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: plugins took 2990.4273ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: defsScala took 0.0022ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: plugins took 9456.6761ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: defsScala took 0.0135ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Scanning directory C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.loadUnit: mkEval took 0.5635ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.loadUnit: mkEval took 1.1306ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Found root project root w/ remaining [0m
 [0m[[0m[0mdebug[0m] [0m[0mdeducing auto plugins based on known facts Set(Atom(play.sbt.PlayScala), Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))[0m
 [0m[[0m[0mdebug[0m] [0m[0mClause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))[0m
@@ -129,21 +129,21 @@
 [0m[[0m[0mdebug[0m] [0m[0mClause(Atom(com.typesafe.sbt.web.SbtWeb),Set(Atom(com.typesafe.sbt.jse.SbtJsEngine)))[0m
 [0m[[0m[0mdebug[0m] [0m[0mClause(Atom(com.typesafe.sbt.jse.SbtJsEngine),Set(Atom(com.typesafe.sbt.jse.SbtJsTask))))[0m
 [0m[[0m[0mdebug[0m] [0m[0m  :: deduced result: Matched(sbt.plugins.CorePlugin,play.sbt.PlayScala,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,play.sbt.PlayWeb,play.twirl.sbt.SbtTwirl,sbt.plugins.JvmPlugin,play.sbt.PlayService,play.sbt.PlayFilters,play.sbt.PlayLayoutPlugin,play.sbt.routes.RoutesCompiler,com.typesafe.sbt.jse.SbtJsTask,com.typesafe.sbt.packager.archetypes.JavaServerAppPackaging,sbt.plugins.SemanticdbPlugin,sbt.plugins.JUnitXmlReportPlugin,play.sbt.PlayLogback,sbt.plugins.MiniDependencyTreePlugin,com.typesafe.sbt.jse.SbtJsEngine,play.sbt.PlayAkkaHttpServer,com.typesafe.sbt.web.SbtWeb,com.typesafe.sbt.packager.archetypes.JavaAppPackaging,com.typesafe.sbt.packager.rpm.RpmPlugin,com.typesafe.sbt.packager.archetypes.scripts.BashStartScriptPlugin,com.typesafe.sbt.packager.windows.WindowsPlugin,com.typesafe.sbt.packager.archetypes.scripts.BatStartScriptPlugin,com.typesafe.sbt.packager.docker.DockerPlugin,com.typesafe.sbt.packager.debian.DebianPlugin,com.typesafe.sbt.packager.universal.UniversalPlugin,com.typesafe.sbt.packager.linux.LinuxPlugin,com.typesafe.sbt.SbtNativePackager)[0m
-[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 9.3575 ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mPlugins.deducer#function took 30.676 ms[0m
 [0m[[0m[0minfo[0m] [0m[0mloading settings for project root from build.sbt...[0m
-[0m[[0m[0mdebug[0m] [0m[0m        Load.resolveProject(root) took 118.8647ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m      Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale, plugins: List(play.sbt.PlayScala))) took 129.6252ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m        Load.resolveProject(root) took 439.1479ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m      Load.loadTransitive: finalizeProject(Project(id root, base: C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale, plugins: List(play.sbt.PlayScala))) took 474.6563ms[0m
 [0m[[0m[0mdebug[0m] [0m[0m[Loading] Done in C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale, returning: (root)[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: loadedProjectsRaw took 206.1586ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: cleanEvalClasses took 7.3734ms[0m
-[0m[[0m[0mdebug[0m] [0m[0m  Load.loadUnit(file:/C:/Users/HP/OneDrive/Documents/S4/Scala/Projet-ProgFonctionnelle-Principale/, ...) took 3205.9054ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: load took 3242.6297ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: resolveProjects took 0.1324ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: finalTransforms took 29.0575ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: config.delegates took 0.9096ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: Def.make(settings)... took 141.9088ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: structureIndex took 42.1201ms[0m
-[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: mkStreams took 0.0021ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: loadedProjectsRaw took 824.3471ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m    Load.loadUnit: cleanEvalClasses took 30.9226ms[0m
+[0m[[0m[0mdebug[0m] [0m[0m  Load.loadUnit(file:/C:/Users/HP/OneDrive/Documents/S4/Scala/Projet-ProgFonctionnelle-Principale/, ...) took 10316.5555ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: load took 10393.7915ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: resolveProjects took 0.4263ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: finalTransforms took 101.5632ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: config.delegates took 3.5143ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: Def.make(settings)... took 313.3261ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: structureIndex took 105.9902ms[0m
+[0m[[0m[0mdebug[0m] [0m[0mLoad.apply: mkStreams took 0.0036ms[0m
 [0m[[0m[0minfo[0m] [0m[0m  __              __[0m
 [0m[[0m[0minfo[0m] [0m[0m  \ \     ____   / /____ _ __  __[0m
 [0m[[0m[0minfo[0m] [0m[0m   \ \   / __ \ / // __ `// / / /[0m
