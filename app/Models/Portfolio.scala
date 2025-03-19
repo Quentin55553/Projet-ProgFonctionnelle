@@ -10,10 +10,17 @@ case class Portfolio(userId: String, assets: Map[String, Int]) {
     })
   }
 
+  def modifyAsset(symbol: String, newQuantity: Int): Portfolio = {
+    copy(assets = assets.updatedWith(symbol) {
+      case Some(_) => Some(newQuantity)
+      case None => None
+    })
+  }
+
   def removeAsset(symbol: String, quantity: Int): Portfolio = {
     copy(assets = assets.updatedWith(symbol) {
       case Some(existingQty) if existingQty > quantity => Some(existingQty - quantity)
-      case _ => None // Supprime l'actif s'il n'y a plus de quantité
+      case _ => None
     })
   }
 }
