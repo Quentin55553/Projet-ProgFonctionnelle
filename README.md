@@ -6,7 +6,7 @@
 
 ## 📋 Projet
 
-Description projet (Je le ferai (Quentin) quand on aura au moins bien avancé dans le projet)
+Description projet
 
 ### 👀 Aperçu
 

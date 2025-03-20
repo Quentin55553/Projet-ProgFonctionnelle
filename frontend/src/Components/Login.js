@@ -20,10 +20,7 @@ function Login() {
 
             const data = await response.json();
             if (response.ok) {
-                setMessage(`Bienvenue, ${data.username}`);
-                setTimeout(() => {
-                    navigate("/welcome", { state: { username: data.username } }); // Correction ici
-                }, 1500);
+                navigate("/welcome", { state: { username: data.username } });
 
             } else {
                 setMessage(data.message);
