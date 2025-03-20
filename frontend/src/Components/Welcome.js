@@ -1,13 +1,9 @@
-import { useLocation } from "react-router-dom";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import '../App.css';
 
 
 function Welcome() {
-    const location = useLocation();
-    const username = location.state?.username || "{UTILISATEUR}";
-
     const [notifications, setNotifications] = useState([]);
     const [menuOpen, setMenuOpen] = useState(false);
 
@@ -58,12 +54,6 @@ function Welcome() {
                     )}
                 </div>
             </nav>
-
-            <br/><br/><br/>
-
-            <div>
-                <h1>Bienvenue {username} !</h1>
-            </div>
         </div>
     );
 }
