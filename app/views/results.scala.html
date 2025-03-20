@@ -1,0 +1,14 @@
+@(predictedPriceRegression: Double, predictedPriceMA: Double)
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Résultats</title>
+    </head>
+    <body>
+        <h1>Résultats de la Prédiction</h1>
+        <p>Prix prédit (Régression Linéaire): @predictedPriceRegression €</p>
+        <p>Prix prédit (Moyenne Mobile - 7 jours): @predictedPriceMA €</p>
+        <a href="@routes.SimulationController.index">Retour</a>
+    </body>
+</html>

@@ -6,35 +6,56 @@ import play.api.mvc.Call
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:7
+// @LINE:9
 package controllers {
 
-  // @LINE:7
-  class ReverseHomeController(_prefix: => String) {
+  // @LINE:9
+  class ReverseSimulationController(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:7
-    def index(): Call = {
+    // @LINE:9
+    def index: Call = {
       
-      Call("GET", _prefix)
+      Call("GET", _prefix + { _defaultPrefix } + "simulation")
+    }
+  
+    // @LINE:10
+    def evaluate(date:String): Call = {
+      
+      Call("GET", _prefix + { _defaultPrefix } + "evaluate" + play.core.routing.queryString(List(Some(implicitly[play.api.mvc.QueryStringBindable[String]].unbind("date", date)))))
     }
   
   }
 
-  // @LINE:10
+  // @LINE:11
   class ReverseAssets(_prefix: => String) {
     def _defaultPrefix: String = {
       if (_prefix.endsWith("/")) "" else "/"
     }
 
   
-    // @LINE:10
+    // @LINE:11
     def versioned(file:Asset): Call = {
       implicit lazy val _rrc = new play.core.routing.ReverseRouteContext(Map(("path", "/public"))); _rrc
       Call("GET", _prefix + { _defaultPrefix } + "assets/" + implicitly[play.api.mvc.PathBindable[Asset]].unbind("file", file))
+    }
+  
+  }
+
+  // @LINE:15
+  class ReverseHomeController(_prefix: => String) {
+    def _defaultPrefix: String = {
+      if (_prefix.endsWith("/")) "" else "/"
+    }
+
+  
+    // @LINE:15
+    def index(): Call = {
+      
+      Call("GET", _prefix)
     }
   
   }

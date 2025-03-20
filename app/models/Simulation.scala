@@ -40,20 +40,24 @@ class Simulation(prices: List[PriceDate], riskFreeRate: Double) {
     }
   }
 
-  def evaluateIndicatorsForDate(date: LocalDate): Unit = {
+  def evaluateIndicatorsForDate(date: LocalDate): String = {
     prices.find(_.date.isEqual(date)) match {
       case Some(priceDate) =>
         val selectedPrices = prices.takeWhile(_.date.isBefore(date.plusDays(1))).map(_.price)
         val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate)
 
-        println(s"\nÉvaluation pour la date: $date, prix: ${priceDate.price} €")
-        println(evaluateRSI(selectedPrices))
-        println(evaluateMACD(selectedPrices))
-        println(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}")
-        println(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}")
+        val result = new StringBuilder()
+        result.append(s"Évaluation pour la date: $date, prix: ${priceDate.price} €\n")
+        result.append(s"${evaluateRSI(selectedPrices)}\n")
+        result.append(s"${evaluateMACD(selectedPrices)}\n")
+        result.append(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}\n")
+        result.append(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}\n")
+
+        result.toString()
 
       case None =>
-        println(s"Aucun prix trouvé pour la date: $date")
+        s"Aucun prix trouvé pour la date: $date"
     }
   }
+
 }

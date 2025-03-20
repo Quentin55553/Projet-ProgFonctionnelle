@@ -1,9 +1,17 @@
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\controllers\SimulationController.scala:94:67: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\models\Simulation.scala:53:69: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
 [0m[[0m[33mwarn[0m] [0m[0mor use the `f""` string interpolator. In Java 15 and later, `formatted` resolves to the new method in String which has reversed parameters.[0m
-[0m[[0m[33mwarn[0m] [0m[0m          println(s"Volatilité: ${financialAlgorithm.volatility().formatted("%.4f")}")[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                                  ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\controllers\SimulationController.scala:95:70: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
+[0m[[0m[33mwarn[0m] [0m[0m        result.append(s"Volatilité: ${financialMetrics.volatility().formatted("%.4f")}\n")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                    ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\models\Simulation.scala:54:75: method formatted in class StringFormat is deprecated (since 2.12.16): Use `formatString.format(value)` instead of `value.formatted(formatString)`,[0m
 [0m[[0m[33mwarn[0m] [0m[0mor use the `f""` string interpolator. In Java 15 and later, `formatted` resolves to the new method in String which has reversed parameters.[0m
-[0m[[0m[33mwarn[0m] [0m[0m          println(s"Sharpe Ratio: ${financialAlgorithm.sharpeRatio().formatted("%.4f")}")[0m
-[0m[[0m[33mwarn[0m] [0m[0m                                                                     ^[0m
-[0m[[0m[33mwarn[0m] [0m[0mtwo warnings found[0m
+[0m[[0m[33mwarn[0m] [0m[0m        result.append(s"Ratio de Sharpe: ${financialMetrics.sharpeRatio().formatted("%.4f")}\n")[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\models\FinancialMetrics.scala:8:27: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: List(_), Nil[0m
+[0m[[0m[33mwarn[0m] [0m[0m    prices.sliding(2).map { case List(prev, current) => (current - prev) / prev }.toList[0m
+[0m[[0m[33mwarn[0m] [0m[0m                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\CYTech Student\IdeaProjects\Projet-ProgFonctionnelle\app\models\IndicatorsMarket.scala:9:43: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following inputs: List(_), Nil[0m
+[0m[[0m[33mwarn[0m] [0m[0m      val changes = prices.sliding(2).map { case List(prev, current) => current - prev }.toList[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                          ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mfour warnings found[0m

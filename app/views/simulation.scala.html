@@ -1,0 +1,16 @@
+@()
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Simulation</title>
+    </head>
+    <body>
+        <h1>Simulation de Prix</h1>
+        <form action="@controllers.routes.SimulationController.evaluate(_)" method="GET">
+            <label for="date">Entrez une date (YYYY-MM-DD):</label>
+            <input type="text" id="date" name="date">
+            <button type="submit">Évaluer</button>
+        </form>
+    </body>
+</html>
