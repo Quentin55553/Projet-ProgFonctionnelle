@@ -1,4 +1,4 @@
-package data
+    package data
 
 import play.api.libs.functional.syntax.toFunctionalBuilderOps
 import play.api.libs.json.Format.GenericFormat

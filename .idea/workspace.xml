@@ -5,68 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b95b1c7-99cf-4649-b4ab-2392fcadba93" name="Changes" comment="a">
-      <change afterPath="$PROJECT_DIR$/app/views/prevision.scala.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/prevision.template.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/HomeController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/HomeController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/SimulationController.scala" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/SimulationController.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/evaluation.scala.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/index.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/index.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main.scala.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/prevision.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/prevision.scala.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/results.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/results.scala.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/simulation.scala.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/simulation.scala.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/application.conf" beforeDir="false" afterPath="$PROJECT_DIR$/conf/application.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/routes" beforeDir="false" afterPath="$PROJECT_DIR$/conf/routes" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/api/APIHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/DataFetcher$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/DataFetcher.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/ReverseAssets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/ReverseHomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/SimulationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/javascript/ReverseAssets.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/javascript/ReverseHomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/routes$javascript.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/routes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/data/FinancialAsset$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/data/FinancialAsset.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/FinancialMetrics$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/FinancialMetrics.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/IndicatorsMarket$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/IndicatorsMarket.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Portfolio$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Portfolio.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Prevision.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/PriceDate$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/PriceDate.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/models/Simulation.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/router/Routes$$anonfun$routes$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/router/Routes.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/router/RoutesPrefix$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/router/RoutesPrefix.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/index$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/index.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/main$.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/views/html/main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/ReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/ReverseRoutes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/javascript/JavaScriptReverseRoutes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/routes.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/controllers/routes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/routes/main/router/Routes.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/routes/main/router/Routes.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/evaluation.template.scala" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/index.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/index.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/main.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/main.template.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/application.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/application.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/HomeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/classes/controllers/HomeController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/prevision.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/prevision.template.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/results.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/results.template.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/simulation.template.scala" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.13/twirl/main/views/html/simulation.template.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.13/zinc/inc_compile_2.13.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/_global/ivyConfiguration/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/ivyConfiguration/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/_global/playCommonClassloader/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/compileOutputs/previous" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/_global/_global/discoveredMainClasses/data" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compile/_global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incOptions/_global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/compile/playRoutes/_global/streams/op-cache" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/playRoutes/_global/streams/op-cache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -234,8 +185,16 @@
       <updated>1742393485511</updated>
       <workItem from="1742393491514" duration="710000" />
       <workItem from="1742485778570" duration="1067000" />
+      <workItem from="1742508104233" duration="1001000" />
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="a">
+      <created>1742508390165</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742508390165</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

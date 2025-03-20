@@ -6,14 +6,45 @@
     <head>
         <meta charset="UTF-8">
         <title>Résultats</title>
+        <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f9;
+                    color: #333;
+                    margin: 0;
+                    padding: 20px;
+                }
+                h1 {
+                    color: #4CAF50;
+                }
+                p {
+                    font-size: 1.1em;
+                    margin: 10px 0;
+                }
+                a {
+                    display: inline-block;
+                    margin-top: 20px;
+                    padding: 10px 15px;
+                    background-color: #4CAF50;
+                    color: white;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+                a:hover {
+                    background-color: #45a049;
+                }
+                strong {
+                    color: #4CAF50;
+                }
+        </style>
     </head>
     <body>
         <h1>Résultats pour la date : @date</h1>
-        <p>Prix : @price €</p>
+        <p>Prix : <strong>@price €</strong></p>
         <p>@rsiResult</p>
         <p>@macdResult</p>
-        <p>Volatilité : @volatility</p>
-        <p>Ratio de Sharpe : @sharpeRatio</p>
+        <p>Volatilité : <strong>@volatility</strong></p>
+        <p>Ratio de Sharpe : <strong>@sharpeRatio</strong></p>
 
         <a href="@routes.HomeController.simulationPage">Retour à la simulation</a>
     </body>

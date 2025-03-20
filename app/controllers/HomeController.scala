@@ -30,18 +30,23 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents)(i
 
       Ok(views.html.prevision(date, predictedPricesRegression.last, predictedPricesMA.last))
     } else {
-      val result = simulation.evaluateIndicatorsForDate(date)
       val selectedPrices = prices.takeWhile(_.date.isBefore(date.plusDays(1))).map(_.price)
       val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate = 0.01)
+
+      // Calculer séparément les résultats du RSI et du MACD
+      val rsiResult = simulation.evaluateRSI(selectedPrices)
+      val macdResult = simulation.evaluateMACD(selectedPrices)
 
       Ok(views.html.results(
         date,
         prices.find(_.date.isEqual(date)).get.price,
-        result,
-        result,
+        rsiResult,
+        macdResult,
         financialMetrics.volatility(),
         financialMetrics.sharpeRatio()
       ))
     }
   }
+
+
 }
