@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Résultats de la Simulation</title>
+</head>
+<body>
+<h1>Résultats de la Simulation</h1>
+
+<pre id="results"></pre>
+
+<script>
+    async function loadResults() {
+        try {
+            const response = await fetch("results.txt");
+            const text = await response.text();
+            document.getElementById("results").textContent = text;
+        } catch (error) {
+            console.error("Erreur lors du chargement des résultats :", error);
+        }
+    }
+
+    loadResults();
+    setInterval(loadResults, 2000); // Rafraîchir toutes les 2 secondes
+</script>
+</body>
+</html>

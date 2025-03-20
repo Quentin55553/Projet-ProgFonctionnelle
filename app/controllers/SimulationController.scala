@@ -2,6 +2,7 @@ package controllers
 
 import models._
 import java.time.LocalDate
+import java.nio.file.{Files, Paths}
 
 object SimulationController extends App {
 
@@ -12,11 +13,16 @@ object SimulationController extends App {
   val riskFreeRate = 0.01
   val simulation = new Simulation(pricesDates, riskFreeRate)
 
-  println("Prix historiques récupérés :")
-  pricesDates.foreach { priceDate =>
-    println(s"${priceDate.date} : prix = ${priceDate.price} €")
-  }
-  println()
+  val outputPath = Paths.get("views/results.txt")
+  Files.createDirectories(outputPath.getParent)
+
+  val historicalPrices = pricesDates.map { priceDate =>
+    s"${priceDate.date} : prix = ${priceDate.price} €"
+  }.mkString("\n")
+
+  Files.write(outputPath, historicalPrices.getBytes)
+
+  println(s"Résultats écrits dans le fichier : ${outputPath.toAbsolutePath}")
 
   val lastDate = pricesDates.last.date
 
@@ -39,9 +45,14 @@ object SimulationController extends App {
         val predictedPricesMA = prevision.predictFuturePricesWithMovingAverage(7, futureDays)
         val predictedPriceMA = predictedPricesMA.last
 
-        println(s"\nPrédictions pour la date: $dateToEvaluate")
-        println(s"1. Prix prédit (Régression Linéaire): $predictedPriceRegression €")
-        println(s"2. Prix prédit (Moyenne Mobile - 7 jours): $predictedPriceMA €")
+        val predictions = s"""
+          Prédictions pour la date: $dateToEvaluate
+          1. Prix prédit (Régression Linéaire): $predictedPriceRegression €
+          2. Prix prédit (Moyenne Mobile - 7 jours): $predictedPriceMA €
+        """
+
+        Files.write(outputPath, predictions.getBytes)
+        println(s"Prédictions pour la date $dateToEvaluate écrites dans le fichier.")
       } else {
         simulation.evaluateIndicatorsForDate(dateToEvaluate)
       }
