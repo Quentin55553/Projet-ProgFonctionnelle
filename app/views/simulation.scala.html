@@ -1,15 +1,38 @@
-@()
+
+@import play.api.mvc.RequestHeader
+@import play.api.i18n.Messages
+
+@(prices: List[PriceDate])(implicit request: RequestHeader, messages: Messages)
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <title>Simulation</title>
     </head>
     <body>
-        <h1>Simulation de Prix</h1>
-        <form action="@controllers.routes.SimulationController.evaluate(_)" method="GET">
-            <label for="date">Entrez une date (YYYY-MM-DD):</label>
-            <input type="text" id="date" name="date">
+        <h1>Prix historiques</h1>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Prix</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for(price <- prices) {
+                    <tr>
+                        <td>@price.date</td>
+                        <td>@price.price €</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <h2>Entrez une date pour évaluer les indicateurs</h2>
+        <form action="@routes.HomeController.evaluateDate" method="POST">
+            <label for="date">Date (YYYY-MM-DD):</label>
+            <input type="date" id="date" name="date" required>
             <button type="submit">Évaluer</button>
         </form>
     </body>

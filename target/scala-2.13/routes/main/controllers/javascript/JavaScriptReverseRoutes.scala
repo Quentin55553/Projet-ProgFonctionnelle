@@ -6,60 +6,10 @@ import play.api.routing.JavaScriptReverseRoute
 
 import _root_.controllers.Assets.Asset
 
-// @LINE:9
+// @LINE:10
 package controllers.javascript {
 
-  // @LINE:9
-  class ReverseSimulationController(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:9
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.SimulationController.index",
-      """
-        function() {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "simulation"})
-        }
-      """
-    )
-  
-    // @LINE:10
-    def evaluate: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.SimulationController.evaluate",
-      """
-        function(date0) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "evaluate" + _qS([(""" + implicitly[play.api.mvc.QueryStringBindable[String]].javascriptUnbind + """)("date", date0)])})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:11
-  class ReverseAssets(_prefix: => String) {
-
-    def _defaultPrefix: String = {
-      if (_prefix.endsWith("/")) "" else "/"
-    }
-
-  
-    // @LINE:11
-    def versioned: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.Assets.versioned",
-      """
-        function(file1) {
-          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "assets/" + (""" + implicitly[play.api.mvc.PathBindable[Asset]].javascriptUnbind + """)("file", file1)})
-        }
-      """
-    )
-  
-  }
-
-  // @LINE:15
+  // @LINE:10
   class ReverseHomeController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -67,12 +17,22 @@ package controllers.javascript {
     }
 
   
-    // @LINE:15
-    def index: JavaScriptReverseRoute = JavaScriptReverseRoute(
-      "controllers.HomeController.index",
+    // @LINE:10
+    def simulationPage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.simulationPage",
       """
         function() {
-          return _wA({method:"GET", url:"""" + _prefix + """"})
+          return _wA({method:"GET", url:"""" + _prefix + { _defaultPrefix } + """" + "simulation"})
+        }
+      """
+    )
+  
+    // @LINE:11
+    def evaluateDate: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.HomeController.evaluateDate",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "evaluate-date"})
         }
       """
     )

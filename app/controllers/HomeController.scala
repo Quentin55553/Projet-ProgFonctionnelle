@@ -1,35 +1,47 @@
 package controllers
 
+import java.time.LocalDate
 import javax.inject._
-import play.api._
 import play.api.mvc._
-import api.APIHandler
+import models._
+import scala.concurrent.ExecutionContext
+import play.api.i18n.I18nSupport
 
-import scala.concurrent.Future
-
-
-/**
- * This controller creates an `Action` to handle HTTP requests to the
- * application's home page.
- */
 @Singleton
-class HomeController @Inject()(val controllerComponents: ControllerComponents) extends BaseController {
-  /**
-   * Create an Action to render an HTML page.
-   *
-   * The configuration in the `routes` file means that this method
-   * will be called when the application receives a `GET` request with
-   * a path of `/`.
-   */
-  def index(): Action[AnyContent] = Action.async { implicit request: Request[AnyContent] =>
-    //Ok(views.html.index()) // Unique ligne de base
-    val api = new APIHandler()
-    api.fetchStockData("AAPL") match {
-      case Some(financialAsset) =>
-        Future.successful(Ok(views.html.index(financialAsset)))
+class HomeController @Inject()(val controllerComponents: ControllerComponents)(implicit ec: ExecutionContext)
+  extends BaseController with I18nSupport {
 
-      case None =>
-        Future.successful(InternalServerError("Erreur lors de la récupération des informations"))
+  private val prices = DataFetcher.fetchHistoricalPrices("AAPL", LocalDate.of(2025, 2, 14), LocalDate.of(2025, 3, 14))
+  private val simulation = new Simulation(prices, riskFreeRate = 0.01)
+
+  def simulationPage() = Action { implicit request: Request[AnyContent] =>
+    Ok(views.html.simulation(prices))
+  }
+
+  def evaluateDate() = Action { implicit request: Request[AnyContent] =>
+    val dateString = request.body.asFormUrlEncoded.get("date").head
+    val date = LocalDate.parse(dateString)
+
+    if (date.isAfter(prices.last.date)) {
+      val prevision = new Prevision(prices.map(_.price))
+      val futureDays = (date.toEpochDay - prices.last.date.toEpochDay).toInt
+      val predictedPricesRegression = prevision.predictFuturePricesWithRegression(futureDays)
+      val predictedPricesMA = prevision.predictFuturePricesWithMovingAverage(7, futureDays)
+
+      Ok(views.html.prevision(date, predictedPricesRegression.last, predictedPricesMA.last))
+    } else {
+      val result = simulation.evaluateIndicatorsForDate(date)
+      val selectedPrices = prices.takeWhile(_.date.isBefore(date.plusDays(1))).map(_.price)
+      val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate = 0.01)
+
+      Ok(views.html.results(
+        date,
+        prices.find(_.date.isEqual(date)).get.price,
+        result,
+        result,
+        financialMetrics.volatility(),
+        financialMetrics.sharpeRatio()
+      ))
     }
   }
 }

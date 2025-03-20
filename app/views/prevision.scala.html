@@ -1,0 +1,17 @@
+@import java.time.LocalDate
+@(date: LocalDate, predictedPriceRegression: Double, predictedPriceMA: Double)(implicit request: RequestHeader)
+
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Prévisions</title>
+    </head>
+    <body>
+        <h1>Prévisions pour la date : @date</h1>
+        <p>Prix prédit (Régression Linéaire) : @predictedPriceRegression €</p>
+        <p>Prix prédit (Moyenne Mobile) : @predictedPriceMA €</p>
+
+        <a href="@routes.HomeController.simulationPage">Retour à la simulation</a>
+    </body>
+</html>

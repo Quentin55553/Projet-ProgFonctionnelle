@@ -32,45 +32,44 @@ Seq[Any](format.raw/*4.34*/("""
 <html>
     <head>
         <title>Index de la plateforme</title>
-        <link rel="icon" type="image/x-icon" href=""""),_display_(/*11.53*/routes/*11.59*/.Assets.versioned("images/favicon.ico")),format.raw/*11.98*/("""">
     </head>
 
     <body>
         <h1>Ceci n'est qu'un test de l'API sur la page d'index, cela pourra être retiré à l'avenir</h1>
-        <h3>Informations boursières pour l'action """),_display_(/*16.52*/financialAsset/*16.66*/.symbol),format.raw/*16.73*/(""" """),format.raw/*16.74*/("""(Apple)</h3>
+        <h3>Informations boursières pour l'action """),_display_(/*15.52*/financialAsset/*15.66*/.symbol),format.raw/*15.73*/(""" """),format.raw/*15.74*/("""(Apple)</h3>
 
         <table>
             <tr>
                 <td>Prix actuel :</td>
-                <td>$ """),_display_(/*21.24*/financialAsset/*21.38*/.currentPrice),format.raw/*21.51*/("""</td>
+                <td>$ """),_display_(/*20.24*/financialAsset/*20.38*/.currentPrice),format.raw/*20.51*/("""</td>
             </tr>
             <tr>
                 <td>Variation :</td>
-                <td>$ """),_display_(/*25.24*/financialAsset/*25.38*/.priceChange),format.raw/*25.50*/("""</td>
+                <td>$ """),_display_(/*24.24*/financialAsset/*24.38*/.priceChange),format.raw/*24.50*/("""</td>
             </tr>
             <tr>
                 <td>Variation (%) :</td>
-                <td>"""),_display_(/*29.22*/financialAsset/*29.36*/.percentChange),format.raw/*29.50*/("""</td>
+                <td>"""),_display_(/*28.22*/financialAsset/*28.36*/.percentChange),format.raw/*28.50*/("""</td>
             </tr>
             <tr>
                 <td>Prix le plus haut :</td>
-                <td>$ """),_display_(/*33.24*/financialAsset/*33.38*/.highPrice),format.raw/*33.48*/("""</td>
+                <td>$ """),_display_(/*32.24*/financialAsset/*32.38*/.highPrice),format.raw/*32.48*/("""</td>
             </tr>
             <tr>
                 <td>Prix le plus bas :</td>
-                <td>$ """),_display_(/*37.24*/financialAsset/*37.38*/.lowPrice),format.raw/*37.47*/("""</td>
+                <td>$ """),_display_(/*36.24*/financialAsset/*36.38*/.lowPrice),format.raw/*36.47*/("""</td>
             </tr>
             <tr>
                 <td>Prix d'ouverture :</td>
-                <td>$ """),_display_(/*41.24*/financialAsset/*41.38*/.openPrice),format.raw/*41.48*/("""</td>
+                <td>$ """),_display_(/*40.24*/financialAsset/*40.38*/.openPrice),format.raw/*40.48*/("""</td>
             </tr>
             <tr>
                 <td>Prix de clôture précédent :</td>
-                <td>$ """),_display_(/*45.24*/financialAsset/*45.38*/.closePrice),format.raw/*45.49*/("""</td>
+                <td>$ """),_display_(/*44.24*/financialAsset/*44.38*/.closePrice),format.raw/*44.49*/("""</td>
             </tr>
             <tr>
                 <td>Date et heure :</td>
-                <td>"""),_display_(/*49.22*/financialAsset/*49.36*/.dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy 'à' HH'h'mm"))),format.raw/*49.107*/("""</td>
+                <td>"""),_display_(/*48.22*/financialAsset/*48.36*/.dateTime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy 'à' HH'h'mm"))),format.raw/*48.107*/("""</td>
             </tr>
         </table>
     </body>
@@ -92,9 +91,9 @@ Seq[Any](format.raw/*4.34*/("""
               /*
                   -- GENERATED --
                   SOURCE: app/views/index.scala.html
-                  HASH: 1563a8b9e51c72dd0a68856914d2156eb4ce7ded
-                  MATRIX: 432->1|466->30|820->76|947->108|979->114|1142->250|1157->256|1217->295|1431->482|1454->496|1482->503|1511->504|1652->618|1675->632|1709->645|1841->750|1864->764|1897->776|2031->883|2054->897|2089->911|2229->1024|2252->1038|2283->1048|2422->1160|2445->1174|2475->1183|2614->1295|2637->1309|2668->1319|2816->1440|2839->1454|2871->1465|3005->1572|3028->1586|3121->1657
-                  LINES: 17->1|18->2|23->4|28->4|31->7|35->11|35->11|35->11|40->16|40->16|40->16|40->16|45->21|45->21|45->21|49->25|49->25|49->25|53->29|53->29|53->29|57->33|57->33|57->33|61->37|61->37|61->37|65->41|65->41|65->41|69->45|69->45|69->45|73->49|73->49|73->49
+                  HASH: 03c5af27456426b8e3148b0866689cb13e195461
+                  MATRIX: 432->1|466->30|820->76|947->108|979->114|1273->381|1296->395|1324->402|1353->403|1494->517|1517->531|1551->544|1683->649|1706->663|1739->675|1873->782|1896->796|1931->810|2071->923|2094->937|2125->947|2264->1059|2287->1073|2317->1082|2456->1194|2479->1208|2510->1218|2658->1339|2681->1353|2713->1364|2847->1471|2870->1485|2963->1556
+                  LINES: 17->1|18->2|23->4|28->4|31->7|39->15|39->15|39->15|39->15|44->20|44->20|44->20|48->24|48->24|48->24|52->28|52->28|52->28|56->32|56->32|56->32|60->36|60->36|60->36|64->40|64->40|64->40|68->44|68->44|68->44|72->48|72->48|72->48
                   -- GENERATED --
               */
           
