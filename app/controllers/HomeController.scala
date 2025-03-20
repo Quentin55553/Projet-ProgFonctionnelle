@@ -33,7 +33,6 @@ class HomeController @Inject()(val controllerComponents: ControllerComponents)(i
       val selectedPrices = prices.takeWhile(_.date.isBefore(date.plusDays(1))).map(_.price)
       val financialMetrics = FinancialMetrics(selectedPrices, riskFreeRate = 0.01)
 
-      // Calculer séparément les résultats du RSI et du MACD
       val rsiResult = simulation.evaluateRSI(selectedPrices)
       val macdResult = simulation.evaluateMACD(selectedPrices)
 
