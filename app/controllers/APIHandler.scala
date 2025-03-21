@@ -145,7 +145,7 @@ class APIHandler() {
         Some(generateRandomForexData(forexSymbol.toUpperCase))
     }
 
-    def fetchFinancialAssetData(assetSymbol: String, from: LocalDateTime, to: LocalDateTime): Option[List[FinancialAsset]] = {
+    def fetchFinancialAssetHistory(assetSymbol: String, from: LocalDateTime, to: LocalDateTime): Option[List[FinancialAsset]] = {
         def isValidDate(date: LocalDateTime): Boolean = {
             date.getMinute == 0 && date.getSecond == 0
         }

@@ -7,7 +7,6 @@ import akka.util.Timeout
 import Models.FinancialAsset.readJsonAsFinancialAsset
 import play.api.libs.json._
 import play.api.mvc._
-import data._
 import models.{AddAsset, GetPortfolio, Portfolio, RemoveAsset}
 import play.api.libs.json.Format.GenericFormat
 import play.api.libs.json.OFormat.oFormatFromReadsAndOWrites
@@ -53,7 +52,7 @@ class PortfolioControllerTest @Inject() (
     val fromDate = LocalDateTime.parse(from)
     val toDate = LocalDateTime.parse(to)
 
-    apiHandler.fetchFinancialAssetData(symbol, fromDate, toDate) match {
+    apiHandler.fetchFinancialAssetHistory(symbol, fromDate, toDate) match {
       case Some(data) => Ok(Json.toJson(data))
       case None => BadRequest("Données historiques non disponibles")
     }

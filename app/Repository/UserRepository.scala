@@ -37,7 +37,7 @@ class UserRepository @Inject()(dbConfigProvider: DatabaseConfigProvider)(implici
 
   def addUser(username: String, email: String, password: String): Future[Either[String, Int]] = {
     if (!isValidEmail(email)) {
-      Future.successful(Left("Email invalide. Veuillez entrer une adresse email valide."))
+      Future.successful(Left("L'adresse email entrée n'est pas au bon format"))
 
     } else {
       val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())

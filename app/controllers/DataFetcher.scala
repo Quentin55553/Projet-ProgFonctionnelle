@@ -10,7 +10,7 @@ object DataFetcher {
     val fromDateTime = LocalDateTime.of(fromDate, java.time.LocalTime.MIDNIGHT)
     val toDateTime = LocalDateTime.of(toDate, java.time.LocalTime.MIDNIGHT)
 
-    apiHandler.fetchFinancialAssetData(assetSymbol, fromDateTime, toDateTime) match {
+    apiHandler.fetchFinancialAssetHistory(assetSymbol, fromDateTime, toDateTime) match {
       case Some(historicalData) =>
         historicalData
           .groupBy(_.dateTime.toLocalDate)
