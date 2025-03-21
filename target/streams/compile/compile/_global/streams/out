@@ -1,0 +1,5 @@
+[0m[[0m[31merror[0m] [0m[0mC:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\app\controllers\SimulationController2.scala:13:7: Companions 'class SimulationController' and 'object SimulationController' must be defined in same file:[0m
+[0m[[0m[31merror[0m] [0m[0m  Found in C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\app\controllers\SimulationController2.scala and C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\app\controllers\SimulationController.scala[0m
+[0m[[0m[31merror[0m] [0m[0mclass SimulationController @Inject()(cc: ControllerComponents, userRepository: UserRepository)[0m
+[0m[[0m[31merror[0m] [0m[0m      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -1,0 +1,35 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Authentification des utilisateurs
+POST    /register                   controllers.UserController.register
+POST    /login                      controllers.UserController.login
+
+GET     /userInfo              controllers.UserController.getUserInfo
+GET     /portfolios/:userId    controllers.PortfolioController.getPortfolios(userId: Int)
+POST    /createPortfolio       controllers.PortfolioController.createPortfolio
+POST    /addAsset              controllers.PortfolioController.addAsset
+POST    /removeAsset           controllers.PortfolioController.removeAsset
+GET     /getPrice              controllers.PriceController.getPrice
+
+GET     /getHistoricalData     controllers.PriceController.getHistoricalData
+GET     /simulate              controllers.SimulationController2.simulatePortfolio
+
+
+
+
+# Portfolio API
+#GET     /portfolio/:userId                            controllers.PortfolioControllerTest.getPortfolio(userId: String)
+#POST    /portfolio/add/:userId/:symbol/:quantity     controllers.PortfolioControllerTest.addAsset(userId: String, symbol: String, quantity: Int)
+#POST    /portfolio/remove/:userId/:symbol/:quantity  controllers.PortfolioControllerTest.removeAsset(userId: String, symbol: String, quantity: Int)
+#GET  /crypto/:symbol       controllers.PortfolioControllerTest.getCryptoPrice(symbol: String)
+#GET  /forex/:symbol        controllers.PortfolioControllerTest.getForexPrice(symbol: String)
+#GET  /history/:symbol/:from/:to controllers.PortfolioControllerTest.getHistoricalData(symbol: String, from: String, to: String)

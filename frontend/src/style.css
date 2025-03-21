@@ -1,0 +1,97 @@
+/* style.css */
+
+/* Corps de page */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Container éventuel pour centrer la page */
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Inputs */
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Boutons */
+button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Messages d'erreur */
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+/* ===== TABLEAU STYLÉ ===== */
+
+/* Appliquez la classe .styled-table sur votre <table> */
+.styled-table {
+    margin: 20px auto;       /* pour centrer le tableau */
+    border-collapse: collapse;
+    font-size: 0.9em;
+    font-family: Arial, sans-serif;
+    min-width: 400px;
+    width: 80%;             /* ou 100%, selon vos besoins */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+}
+
+/* En-tête */
+.styled-table thead tr {
+    background-color: #009879;  /* Couleur de fond */
+    color: #ffffff;             /* Couleur du texte */
+    text-align: left;
+    font-weight: bold;
+}
+
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f1f1f1;
+    transition: background-color 0.2s;
+}

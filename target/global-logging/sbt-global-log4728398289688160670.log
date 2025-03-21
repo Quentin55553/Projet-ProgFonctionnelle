@@ -1,0 +1,43 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.10.7 (Oracle Corporation Java 22.0.1)
+[debug] Load.defaultLoad until apply took 212.9166ms
+[debug]           Load.loadUnit: plugins took 179.0973ms
+[debug]           Load.loadUnit: defsScala took 1.3828ms
+[debug] [Loading] Scanning directory C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\project
+[debug]             Load.loadUnit: mkEval took 17.6039ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin)))
+[debug] Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin)))
+[debug] Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin)))
+[debug] Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin)))
+[debug] Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 37.1834 ms
+[info] loading settings for project projet-progfonctionnelle-principale-quentin-build from plugins.sbt...
+[debug]               Load.resolveProject(projet-progfonctionnelle-principale-quentin-build) took 97.2308ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id projet-progfonctionnelle-principale-quentin-build, base: C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\project, plugins: List(<none>))) took 173.4132ms
+[debug] [Loading] Done in C:\Users\HP\OneDrive\Documents\S4\Scala\Projet-ProgFonctionnelle-Principale-Quentin\project, returning: (projet-progfonctionnelle-principale-quentin-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 6874.1353ms
+[debug]           Load.loadUnit: cleanEvalClasses took 268.056ms
+[debug]         Load.loadUnit(file:/C:/Users/HP/OneDrive/Documents/S4/Scala/Projet-ProgFonctionnelle-Principale-Quentin/project/, ...) took 7344.6418ms
+[debug]       Load.apply: load took 7701.4969ms
+[debug]       Load.apply: resolveProjects took 10.7204ms
+[debug]       Load.apply: finalTransforms took 172.4874ms
+[debug]       Load.apply: config.delegates took 32.0752ms
