@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS users (
     id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password_hash TEXT NOT NULL,
-	email VARCHAR(255) UNIQUE;
+	email VARCHAR(255) UNIQUE
 );
 
 INSERT INTO users (username, password_hash, email) 
