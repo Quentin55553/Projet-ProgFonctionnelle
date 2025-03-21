@@ -4,8 +4,7 @@ import javax.inject._
 import akka.actor.ActorRef
 import akka.pattern.ask
 import akka.util.Timeout
-import api.APIHandler
-import data.FinancialAsset.readJsonAsFinancialAsset
+import Models.FinancialAsset.readJsonAsFinancialAsset
 import play.api.libs.json._
 import play.api.mvc._
 import data._

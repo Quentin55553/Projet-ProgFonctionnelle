@@ -1,10 +1,10 @@
 package Actors
 
+import Models.FinancialAsset
 import akka.actor.{Actor, ActorLogging}
 import akka.stream.scaladsl.{Source, Flow, Sink}
 import akka.stream.Materializer
-import api.APIHandler
-import data.FinancialAsset
+import controllers.APIHandler
 
 import scala.concurrent.ExecutionContext
 import scala.concurrent.duration._
