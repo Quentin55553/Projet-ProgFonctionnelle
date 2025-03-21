@@ -9,6 +9,7 @@ function Login() {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
 
+
     const handleLogin = async (e) => {
         e.preventDefault();
         setIsLoading(true);
@@ -40,6 +41,7 @@ function Login() {
                     document.querySelector('.login-form').classList.remove('error');
                 }, 500);
             }
+            
         } catch (error) {
             setMessage("Erreur lors de la connexion au serveur");
             setIsLoading(false);

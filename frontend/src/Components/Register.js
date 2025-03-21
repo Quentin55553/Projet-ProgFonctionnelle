@@ -13,19 +13,25 @@ function Register() {
     const handleRegister = async (e) => {
         e.preventDefault();
 
-        const response = await fetch("http://localhost:9000/register", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ username, email, password }),
-        });
+        try {
+            const response = await fetch("http://localhost:9000/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ username, email, password }),
+            });
 
-        const data = await response.json();
+            const data = await response.json();
 
-        if (response.ok) {
-            setMessage("Compte créé avec succès !");
-            setTimeout(() => navigate("/login"), 2000); // Redirige vers connexion après 2 sec
-        } else {
-            setMessage(data.message);
+            if (response.ok) {
+                setMessage("Compte créé avec succès !");
+                setTimeout(() => navigate("/login"), 2000); // Redirige vers connexion après 2 sec
+
+            } else {
+                setMessage(data.message);
+            }
+
+        } catch (error) {
+            setMessage("Erreur lors de la connexion au serveur");
         }
     };
 
