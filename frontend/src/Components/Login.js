@@ -41,7 +41,7 @@ function Login() {
                 }, 500);
             }
         } catch (error) {
-            setMessage("Erreur de connexion. Vérifie ton serveur.");
+            setMessage("Erreur lors de la connexion au serveur");
             setIsLoading(false);
             // Ajouter une classe pour l'animation d'erreur
             document.querySelector('.login-form').classList.add('error');
